@@ -1,0 +1,357 @@
+{
+  "appliances": [
+    {
+      "id": "6",
+      "title": "CookTop",
+      "icon": "fa-figma",
+      "content1": "Refrigerators are rather complex devices, and it is possible to determine the exact cause of a breakdown only with the help of special diagnostic equipment.",
+      "content2": "It is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition.",
+      "imageUrl1": "https://philco.vtexassets.com/arquivos/ids/198712/pct05vc_01.jpg?v=637837439148070000",
+      "imageUrl2": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Ranges",
+      "icon": "fa-figma",
+      "content1": "Refrigerators are rather complex devices, and it is possible to determine the exact cause of a breakdown only with the help of special diagnostic equipment.",
+      "content2": "It is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition.",
+      "imageUrl1": "https://kitchenaid-h.assetsadobe.com/is/image/content/dam/global/kitchenaid/cooking/range/images/hero-KSEG950ESS.tif?&fmt=png-alpha&resMode=sharp2&wid=850&hei=850",
+      "imageUrl2": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg"
+    },
+    {
+      "id": "8",
+      "title": "DishWasher",
+      "icon": "fa-figma",
+      "content1": "Refrigerators are rather complex devices, and it is possible to determine the exact cause of a breakdown only with the help of special diagnostic equipment.",
+      "content2": "MIt is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition.",
+      "imageUrl1": "https://www.thegreatest.ph/uploads/2/4/2/9/24291153/s316871342485588382_p26_i3_w5000.jpeg?width=2560",
+      "imageUrl2": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg"
+    },
+    {
+      "id": "918f8667-0222-4180-802b-289f940ea4d4",
+      "title": "Dryer",
+      "icon": "fa-figma",
+      "content1": "Refrigerators are rather complex devices, and it is possible to determine the exact cause of a breakdown only with the help of special diagnostic equipment.",
+      "content2": "It is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition.",
+      "imageUrl1": "https://image-us.samsung.com/SamsungUS/home/home-appliances/dryers/282022d/DVE45B6300P_10_Platinum_SCOM.jpg?$product-details-jpg$",
+      "imageUrl2": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg"
+    },
+    {
+      "id": "90dd47e6-dff5-4803-bc20-776f45244c3a",
+      "title": "Freezer",
+      "icon": "fa-figma",
+      "content1": "Refrigerators are rather complex devices, and it is possible to determine the exact cause of a breakdown only with the help of special diagnostic equipment.",
+      "content2": "It is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition.",
+      "imageUrl1": "https://zinko.com.ng/wp-content/uploads/2021/11/HTF-150HAS-SLV.png",
+      "imageUrl2": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg"
+    },
+    {
+      "id": "a181398d-1e6a-48f2-945b-3f1c2254f854",
+      "title": "Refrigerator",
+      "icon": "fa-figma",
+      "content1": "Refrigerators are rather complex devices, and it is possible to determine the exact cause of a breakdown only with the help of special diagnostic equipment.",
+      "content2": "It is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition.",
+      "imageUrl1": "https://d1pjg4o0tbonat.cloudfront.net/content/dam/midea-aem/ph/fresh-storage/4-door-smart-refrigerador/midea-18-cu-ft--4-door-inverter-smart-refrigerator_mdrm632fgg28/MDRM632FGG28.png/jcr:content/renditions/cq5dam.compression.png",
+      "imageUrl2": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg"
+    },
+    {
+      "id": "09cf5a43-85b3-42d2-8714-6897b0ca5318",
+      "title": "Oven, Stove",
+      "icon": "fa-figma",
+      "content1": "Oven are rather complex devices, and it is possible to determine the exact cause of a breakdown only with the help of special diagnostic equipment.",
+      "content2": " It is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition.",
+      "imageUrl1": "https://www.elba-cookers.com/wp-content/uploads/2022/03/elba-vintage-freestanding-cooker-vc-965-fg.png",
+      "imageUrl2": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg"
+    },
+    {
+      "id": "660e26e9-cce4-4c0f-b18f-251860b0f8d3",
+      "title": "Washer",
+      "icon": "fa-figma",
+      "content1": "Washers are rather complex devices, and it is possible to determine the exact cause of a breakdown only with the help of special diagnostic equipment.",
+      "content2": "It is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition.",
+      "imageUrl1": "https://image-us.samsung.com/SamsungUS/home/home-appliances/washers-dryers/wf50a8500av-a5/gallery/WF50A8500AV_01_BrushedBlack_SCOM.jpg?$product-details-jpg$",
+      "imageUrl2": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg"
+    }
+  ],
+  "blogs": [
+    {
+      "id": "acc11496-2392-46c2-a9d0-08f1038bbf9b",
+      "imageUrl": "https://cdn.mrusta.com/blog/ApplianceRepair%20Services2.jpg",
+      "title": "this summer with save-on bills",
+      "contentheader": "<p>Power stays one of the critical challenges of fortune. Businesses require to strike the balance between working efficiency and endurable development. With soaring energy prices and the improved absence of biological resources, identifying energy efficiencies – from intending to manufacturing to processes – makes reasonable industry insight. Summer pulling about means warmer temperatures are on the horizon. Whether you are even operating from home, and like to maintain cool in your house or office, or you are just glancing for ways to preserve money, energy efficiency can benefit.</p><p>Heat waves and power outages have been plaguing the nation in recent weeks and temperatures are expected to rise higher than usual all over the world due to increasing population. Besides being an ecological tragedy, these hot summer daytimes can likewise be a disaster for your pocket. By far, the greatest part of your power bill arrives from your home’s heating and cooling appliances. With your AC racing all summer protracted, you can anticipate some of your most elevated electric statements of the year to come between June and October.</p><p><strong>1. Cook wisely</strong></p><p>Rather than operating the oven or stovetop, you can preserve cooling your house by decreasing the heat in your residence. Cook outside as much as feasible. Not only does this preserve your home from overheating, but it also prevents your air conditioner from operating over time.</p><p><strong>2. Soak your laundry in cold water whenever practicable</strong></p><p>Relying on the clothing and local water rate, you may be competent to do laundry solely with cold water using cold dampness detergents. An intermediate household with an electric water heater can preserve $400 annually.</p><p><strong>3. Keep a consistent temperature in the refrigerator</strong></p><p>Place the temperature of the fridge between 36 degrees and 38 degrees for maximum effectiveness. The freezer should be maintained at 15 degrees at least.</p><p><strong>4. Accommodate your water heater to a more inferior temperature</strong></p><p>You can efficiently lessen your moisture heater’s temperature to 120 degrees to conserve energy and cash. Question your plumber for service so you can commence learning savings!</p><p><strong>5. Utilize light appliances that you require</strong></p><p>A bare light bulb can warm a space.</p>",
+      "content": "It’s time to Beat the heat this summer with save-on bills!",
+      "date": "2024-09-25"
+    },
+    {
+      "id": "67dd9a5b-a020-4f36-893c-64c4e12c79c2",
+      "imageUrl": "https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg",
+      "title": "It’s time to Beat",
+      "contentheader": "<p>Power stays one of the critical challenges of fortune. Businesses require to strike the balance between working efficiency and endurable development. With soaring energy prices and the improved absence of biological resources, identifying energy efficiencies – from intending to manufacturing to processes – makes reasonable industry insight. Summer pulling about means warmer temperatures are on the horizon. Whether you are even operating from home, and like to maintain cool in your house or office, or you are just glancing for ways to preserve money, energy efficiency can benefit.</p><p>Heat waves and power outages have been plaguing the nation in recent weeks and temperatures are expected to rise higher than usual all over the world due to increasing population. Besides being an ecological tragedy, these hot summer daytimes can likewise be a disaster for your pocket. By far, the greatest part of your power bill arrives from your home’s heating and cooling appliances. With your AC racing all summer protracted, you can anticipate some of your most elevated electric statements of the year to come between June and October.</p><p><strong>1. Cook wisely</strong></p><p>Rather than operating the oven or stovetop, you can preserve cooling your house by decreasing the heat in your residence. Cook outside as much as feasible. Not only does this preserve your home from overheating, but it also prevents your air conditioner from operating over time.</p><p><strong>2. Soak your laundry in cold water whenever practicable</strong></p><p>Relying on the clothing and local water rate, you may be competent to do laundry solely with cold water using cold dampness detergents. An intermediate household with an electric water heater can preserve $400 annually.</p><p><strong>3. Keep a consistent temperature in the refrigerator</strong></p><p>Place the temperature of the fridge between 36 degrees and 38 degrees for maximum effectiveness. The freezer should be maintained at 15 degrees at least.</p><p><strong>4. Accommodate your water heater to a more inferior temperature</strong></p><p>You can efficiently lessen your moisture heater’s temperature to 120 degrees to conserve energy and cash. Question your plumber for service so you can commence learning savings!</p><p><strong>5. Utilize light appliances that you require</strong></p><p>A bare light bulb can warm a space.</p>",
+      "content": "It’s time to Beat the heat this summer with save-on bills!",
+      "date": "2024-09-25"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "528d",
+      "phone1": "(+000)0000000",
+      "phone2": "(024)8888888",
+      "email1": "info@hadaddy.ca",
+      "email2": "career@daddy.ca",
+      "site": "1609 Yonge Street, Toronto, Ontario, Canada"
+    }
+  ],
+  "contactforms": [
+    {
+      "id": "acc11496-2323-46c2-a9d0-08f1038bbf9b",
+      "fullName": "JohnDoe",
+      "phone": "(024)8888888",
+      "email": "feyzullayeva@gmail.com",
+      "selectfield": "plumber",
+      "text": "jdjjdsjdsjndsjnkjsdjndsjjnsdjndjndjn"
+    },
+    {
+      "id": "acc231496-2393-46c2-a9d0-08f1038bbf9b",
+      "fullName": "JohnDoe",
+      "phone": "(024)8888888",
+      "email": "feyzullayeva@gmail.com",
+      "selectfield": "plumber",
+      "text": "jdjjdsjdsjndsjnkjsdjndsjjnsdjndjndjn"
+    }
+  ],
+  "faqs": [
+    {
+      "id": "a11496-2392-46c2-a9d0",
+      "question": "What appliances and systems are repaired?",
+      "description": "There is no cap to the number of service appointments you can schedule with Super. We're here to help youcare for your home, whether you prefer annual check-ups or monthly maintenance."
+    },
+    {
+      "id": "acc11496-2392-46c9d0",
+      "question": "What appliances and systems are repaired?",
+      "description": "There is no cap to the number of service appointments you can schedule with Super. We're here to help youcare for your home, whether you prefer annual check-ups or monthly maintenance."
+    },
+    {
+      "id": "acc11496-2-46c2-a9d0",
+      "question": "What appliances and systems are repaired?",
+      "description": "There is no cap to the number of service appointments you can schedule with Super. We're here to help youcare for your home, whether you prefer annual check-ups or monthly maintenance."
+    },
+    {
+      "id": "d52918dc-99bc-4374-9ee8-6fcb557228be",
+      "question": "When can i request service?",
+      "description": "There is no cap to the number of service appointments you can schedule with Super. We're here to help you\ncare for your home, whether you prefer annual check-ups or monthly maintenance."
+    }
+  ],
+  "homewhyuss": [
+    {
+      "id": "55010056-4af9-4115-81e9-5b6df49725e0",
+      "docs": [
+        {
+          "image1": "https://www.yourfreecareertest.com/wp-content/uploads/2016/07/plumber.jpg",
+          "text1": "Same day service",
+          "text2": "No hourly charge - flat rate",
+          "text3": "No extra charge for evening and week-end services",
+          "text4": "3 month warranty on spare parts and labor"
+        },
+        {
+          "image1": "https://media.istockphoto.com/id/1327204419/photo/plumber-fixing.jpg?s=612x612&w=0&k=20&c=banPoUAUlP4MoZT8VEDJdVfJnOiTe4fyQ0tH5W6lcYg=",
+          "text1": "No surprise or hidden fees",
+          "text2": "Genuine spare parts",
+          "text3": "Fully insured technicians",
+          "text4": "Technicians trained by industry leaders"
+        },
+        {
+          "image1": "https://www.ziprecruiter.com/svc/fotomat/public-ziprecruiter/cms/518675529MasterPlumber.jpg=ws1280x960",
+          "text1": "Criminal/background check for technicians",
+          "text2": "We work with all major brands",
+          "text3": "Over 15 years of experience",
+          "text4": "Fully insured technicians"
+        }
+      ]
+    }
+  ],
+  "joins": [
+    {
+      "id": "42b272-e281-4729-8671",
+      "fullName": "JohnDoe",
+      "servicetype": "home",
+      "phone": "(024)8888888",
+      "email": "feyzullayeva@gmail.com",
+      "message": "There is no cap to the number of service appointments you can schedule with Super. We're here to help you\ncare for your home, whether you prefer annual check-ups or monthly maintenance."
+    },
+    {
+      "id": "42b272-e281-29-8671",
+      "fullName": "John",
+      "servicetype": "home",
+      "phone": "(024)8888888",
+      "email": "feyzullay122eva@gmail.com",
+      "message": "There is no cap to the number of service appointments you can schedule with Super. We're here to help you\ncare for your home, whether you prefer annual check-ups or monthly maintenance."
+    },
+    {
+      "id": "4272-e281-4729-8671",
+      "fullName": "JohnD",
+      "servicetype": "home",
+      "phone": "(024)8888888",
+      "email": "feyzull2eva@gmail.com",
+      "message": "There is no cap to the number of service appointments you can schedule with Super. We're here to help you\ncare for your home, whether you prefer annual check-ups or monthly maintenance."
+    }
+  ],
+  "lotteries": [
+    {
+      "id": "396-2393-46c2",
+      "question1": "What appliances and systems are repair",
+      "question2": "What appliances and systems are repaired",
+      "text": "There is no cap to the number of service appointments you can schedule with Super. We're here to help you\ncare for your home, whether you prefer annual check-ups or monthly maintenanc"
+    },
+    {
+      "id": "7c5f40c7-3dda-4a66-b827-9755d9cf898d",
+      "question1": "Wanna have fun in West Edmonton Mall?",
+      "question2": "West Edmonton Mall?",
+      "text": " It is better to contact Handy Daddy specialists, who have all the necessary tools \nand impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, \nour masters will determine the cause of the breakdown and bring your refrigerator to working condition."
+    },
+    {
+      "id": "bc2a7c23-cc97-430f-97ac-2267caf4ba95",
+      "question1": "Wanna have fun in",
+      "question2": "West Edmonton Mall?",
+      "text": "It is better to contact Handy Daddy specialists, who have all the necessary tools and impressive experience in repairing refrigerators of various types and brands. In the shortest time possible, our masters will determine the cause of the breakdown and bring your refrigerator to working condition."
+    }
+  ],
+  "lotteryimages": [
+    {
+      "id": "bed2271b-cc1e-4839-892f-06deca594c9a",
+      "imageUrl1": "https://www.stayz.com.au/holiday-ideas/wp-content/uploads/4Hev3b8KyjoZX0UCX9GxIm/6a79a79ec8024deb35c4bdd3dfd29f23/AdobeStock_168626581.jpeg",
+      "imageUrl2": "https://assets.oakshotels.com/image/upload/q_auto,f_auto/media/minor/oaks/images/blog/2023/10-fun-family-holidays-australia/casuarina-beach.jpg?h=50%25&w=100%25",
+      "imageUrl3": "https://wp.inews.co.uk/wp-content/uploads/2022/08/SEI_117842731.jpg?w=760",
+      "imageUrl4": "https://www.azureva-vacances.com/media/cache/edito_horizontal_sidebar/uploads/portfolio/5c3d8d2c601aa_bon-plan-vacances-familles.jpg",
+      "imageUrl5": "https://villasholidayscroatia.com/storage/app/media/uploaded-files/10.webp"
+    },
+    {
+      "id": "1f02db6c-0b6a-4bc5-8953-76973e66fad3",
+      "imageUrl1": "https://t4.ftcdn.net/jpg/02/72/80/85/360_F_272808520_QyQgmxbVAhcZ0giKJtaYrd5QsWytKp8b.jpg",
+      "imageUrl2": "https://t4.ftcdn.net/jpg/02/72/80/85/360_F_272808520_QyQgmxbVAhcZ0giKJtaYrd5QsWytKp8b.jpg",
+      "imageUrl3": "https://t4.ftcdn.net/jpg/02/72/80/85/360_F_272808520_QyQgmxbVAhcZ0giKJtaYrd5QsWytKp8b.jpg",
+      "imageUrl4": "https://t4.ftcdn.net/jpg/02/72/80/85/360_F_272808520_QyQgmxbVAhcZ0giKJtaYrd5QsWytKp8b.jpg",
+      "imageUrl5": "https://t4.ftcdn.net/jpg/02/72/80/85/360_F_272808520_QyQgmxbVAhcZ0giKJtaYrd5QsWytKp8b.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "id": "acc11496-2393-46c2-a9d0-08f1038bbf9b",
+      "fullName": "JohnDoe",
+      "email": "feyzullayeva@gmail.com",
+      "phone": "(024)8888888",
+      "address": "jdjjdsjdsjndsjnkjsdjndsjjnsdjndjndjn",
+      "date": "2024-09-11",
+      "hour": "13:44",
+      "applianceType": "plumber"
+    },
+    {
+      "id": "-2393-46c2-a9d0-08f1038bbf9b",
+      "fullName": "JohnDoe",
+      "email": "feyzullayeva@gmail.com",
+      "phone": "(024)8888888",
+      "address": "jdjjdsjdsjndsjnkjsdjndsjjnsdjndjndjn",
+      "date": "2024-09-11",
+      "hour": "13:44",
+      "applianceType": "plumber"
+    },
+    {
+      "id": "acc11496-2393-46c2-a9d0-",
+      "fullName": "JohnDoe",
+      "email": "feyzullayeva@gmail.com",
+      "phone": "(024)8888888",
+      "address": "jdjjdsjdsjndsjnkjsdjndsjjnsdjndjndjn",
+      "date": "2024-09-11",
+      "hour": "13:44",
+      "applianceType": "plumber"
+    },
+    {
+      "id": "acc11496--46c2-a9d0-08f1038bbf9b",
+      "fullName": "JohnDoe",
+      "email": "feyzullayeva@gmail.com",
+      "phone": "(024)8888888",
+      "address": "jdjjdsjdsjndsjnkjsdjndsjjnsdjndjndjn",
+      "date": "2024-09-11",
+      "hour": "13:44",
+      "applianceType": "plumber"
+    }
+  ],
+  "privacies": [
+    {
+      "id": "362bfa14-766b-4dde-9978-cb9266d2df9c",
+      "description": "<p>Thank you for visiting GlassesUSA.com, a website owned and operated by Optimax Investments Ltd. (“Optimax”). Please read these Terms and Conditions of Use (“Terms”) carefully. They contain the legal terms and conditions that govern the use of and access to our websites, www.glassesusa.com and www.m.glassesusa.com, as well as any other websites, mobile sites, (our “Websites”) and mobile applications (our “Apps”) (collectively, our “Sites”) owned, operated and/or distributed by Optimax, Glasses USA, Inc., Optimax Eyewear, Inc., Glasses California, Inc., GlassesUSA Fulfillment Center, Inc. (hereinafter, collectively referred to as “GlassesUSA.com,” “GlassesUSA,” “we,” “us,” or “our”), as well as our provision of products and services provided or made available by GlassesUSA. Certain offline or online services, promotions, events, and features may have additional terms and conditions specific to them as communicated at the point of purchase, in advertising, or in person, and those additional terms and conditions are incorporated herein by reference.</p><p>&nbsp;</p><p><strong>Acceptance of This Agreement, Modification &amp; Severability</strong></p><p>By visiting any of our Sites that link to these Terms, you are acknowledging that you have read these Terms and our Privacy Policy , which is incorporated by reference herein, and you expressly acknowledge and agree that you are entering into a legal agreement with GlassesUSA (or any of its affiliates) and have understood and agree to comply with, and be legally bound by, these Terms. Please review our Privacy Policy which also governs your use of our Sites, to understand our practices. Any products ordered or services used through any of our Sites are also governed by these Terms. You hereby waive any applicable rights to require an original (non-electronic) signature or delivery or retention of non-electronic records, to the extent not prohibited under applicable law. If you do not agree to be bound by these Terms and Conditions, please do not access our Sites or make any purchases through our Sites.</p><p>&nbsp;</p><p>Thank you for visiting GlassesUSA.com, a website owned and operated by Optimax Investments Ltd. (“Optimax”). Please read these Terms and Conditions of Use (“Terms”) carefully. They contain the legal terms and conditions that govern the use of and access to our websites, www.glassesusa.com and www.m.glassesusa.com, as well as any other websites, mobile sites, (our “Websites”) and mobile applications (our “Apps”) (collectively, our “Sites”) owned, operated and/or distributed by Optimax, Glasses USA, Inc., Optimax Eyewear, Inc., Glasses California, Inc., GlassesUSA Fulfillment Center, Inc. (hereinafter, collectively referred to as “GlassesUSA.com,” “GlassesUSA,” “we,” “us,” or “our”), as well as our provision of products and services provided or made available by GlassesUSA. Certain offline or online services, promotions, events, and features may have additional terms and conditions specific to them as communicated at the point of purchase, in advertising, or in person, and those additional terms and conditions are incorporated herein by reference.</p><p>You hereby waive any applicable rights to require an original (non-electronic) signature or delivery or retention of non-electronic records, to the extent not prohibited under applicable law. If you do not agree to be bound by these Terms and Conditions, please do not access our Sites or make any purchases through our Sites.</p><p>We may make changes to these Terms from time to time. If GlassesUSA.com makes changes, it will provide you with notice of such changes, such as by sending an email, providing a notice through our Sites, or updating the date at the top of these Terms. Unless GlassesUSA.com says otherwise in its notice, the amended Terms will be effective immediately and your continued access to and use of the Sites after GlassesUSA.com provides such notice will confirm your acceptance of the changes. If you do not agree to the amended Terms, you must stop accessing and using the Sites. If any of these Terms shall be deemed invalid, void, or for any reason unenforceable, that Term shell be deemed severable and shall not affect the validity and enforceability of any remaining Term.</p><p>&nbsp;</p><p>YOUR CONTINUED USE OF ANY OF THE SITES AFTER WE POST ANY CHANGES WILL CONSTITUTE YOUR ACCEPTANCE OF SUCH CHANGES. IN ADDITION, BY ORDERING PRODUCTS OR USING SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ AND REVIEWED THESE TERMS IN THEIR ENTIRETY, YOU AGREE TO THESE TERMS AND THE PRIVACY POLICY, AND YOU AGREE THAT THESE TERMS CONSTITUTE BINDING AND ENFORCEABLE OBLIGATIONS ON YOU.</p><p>&nbsp;</p><p><strong>NOTE: THESE TERMS CONTAIN A BINDING ARBITRATION AND CLASS ACTION WAIVER PROVISION IN THE “ARBITRATION AGREEMENT” SECTION BELOW THAT AFFECTS YOUR RIGHTS UNDER THESE TERMS AND WITH RESPECT TO ANY DISPUTE BETWEEN YOU AND GLASSESUSA.COM. THESE TERMS PROVIDE THAT ALL DISPUTES BETWEEN YOU AND OPTIMAX THAT IN ANY WAY RELATE TO THESE TERMS OF USE OR YOUR USE OF OUR SITES WILL BE RESOLVED BY BINDING ARBITRATION. ACCORDINGLY, YOU AGREE TO GIVE UP YOUR RIGHT TO GO TO COURT (INCLUDING IN A CLASS ACTION PROCEEDING) TO ASSERT OR DEFEND YOUR RIGHTS UNDER THESE TERMS (EXCEPT FOR MATTERS THAT MAY BE TAKEN TO SMALL CLAIMS COURT). YOUR RIGHTS WILL BE DETERMINED BY A NEUTRAL ARBITRATOR AND NOT A JUDGE OR JURY AND YOUR CLAIMS CANNOT BE BROUGHT AS A CLASS ACTION.</strong></p><p>&nbsp;</p><p>Any information supplied through our Sites, by any form of e-mail communication or by any of our employees or agents, whether by telephone, e-mail, letter, facsimile or other form of communication, is for informational purposes or general guidance and does not constitute medical or other professional advice. Health-related information provided through our Sites is not a substitute for medical advice and it is important that you not make medical decisions without first consulting your personal physician, optometrist, ophthalmologist or other healthcare professional. The receipt of any questions or feedback you submit to us does not create a professional relationship and does not create any privacy interests other than those described in our Privacy Policy.</p><p><strong>No professional advice</strong></p><p>Any information supplied through our Sites, by any form of e-mail communication or by any of our employees or agents, whether by telephone, e-mail, letter, facsimile or other form of communication, is for informational purposes or general guidance and does not constitute medical or other professional advice. Health-related information provided through our Sites is not a substitute for medical advice and it is important that you not make medical decisions without first consulting your personal physician, optometrist, ophthalmologist or other healthcare professional. The receipt of any questions or feedback you submit to us does not create a professional relationship and does not create any privacy interests other than those described in our Privacy Policy.</p><p>The information presented on or through our Sites or by any form of e-mail communication is made available solely for general information purposes. We do not warrant the accuracy, completeness, or usefulness of this information. Any reliance you place on such information is strictly at your own risk. We disclaim all liability and responsibility arising from any reliance placed on such materials by you or any other visitor to our Sites, or by anyone who may be informed of any of its contents.</p><p>&nbsp;</p><p><strong>General information</strong></p><p>These Terms and Privacy Policy govern the use of the Sites. You also may be subject to additional terms and conditions that may apply when you use third-party content or third-party software. Our failure to exercise or enforce any right or provision of the Terms shall not constitute a waiver of such right or provision. If any provision of the Terms is found by a court of competent jurisdiction to be invalid, the parties nevertheless agree that the court should endeavor to give effect to the parties’ intentions as reflected in the provision, and the other provisions of the Terms remain in full force and effect.</p><p>&nbsp;</p><p><strong>DISPUTE RESOLUTION; ARBITRATION; CLASS ACTION WAIVER PROVISION ARBITRATION AGREEMENT</strong></p><p><strong>Please read this section carefully. It affects your rights. It requires you to arbitrate disputes with GlassesUSA.com and limits the manner in which you can seek relief. It further provides that you waive your rights to try any claim in court before a judge or jury and to bring or participate in any class, collective, or other representative action. This section of the Terms shall be referred to as the “Arbitration Agreement.”</strong></p>",
+      "title": "GENERAL TERMS AND CONDITIONS OF USE"
+    }
+  ],
+  "whyuss": [
+    {
+      "id": "200101c2-9160-4d31-8659-d0c2fa9f861f",
+      "docs": [
+        {
+          "image1": "https://hotshotelectrical.com/wp-content/uploads/2022/05/hse-img06.jpg",
+          "text1": "Same day service",
+          "text2": "No hourly charge - flat rate",
+          "text3": "No extra charge for evening and week-end services",
+          "text4": "3 month warranty on spare parts and labor"
+        },
+        {
+          "image1": "https://hotshotelectrical.com/wp-content/uploads/2022/05/hse-img06.jpg",
+          "text1": "No surprise or hidden fees",
+          "text2": "Genuine spare parts",
+          "text3": "Fully insured technicians",
+          "text4": "Technicians trained by industry leaders"
+        },
+        {
+          "image1": "https://hotshotelectrical.com/wp-content/uploads/2022/05/hse-img06.jpg",
+          "text1": "Criminal / background check for technicians",
+          "text2": "We work with all major brands",
+          "text3": "Over 15 years of experience",
+          "text4": "Double vaccinated against COVID"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "acc231496-2393-40-08f1038bbf9b",
+      "fullName": "JohnDoe",
+      "point": "4",
+      "comment": "perfect",
+      "service": "plumber"
+    },
+    {
+      "id": "acc231496-22-a9d0-08f1038bbf9b",
+      "point": 3,
+      "fullName": "JohnDoe",
+      "service": "plumber",
+      "comment": "perfect"
+    },
+    {
+      "id": "acc231496-2393-46c2-a9d0-8bbf9b",
+      "fullName": "JohnDo",
+      "point": 4,
+      "comment": "perfect",
+      "service": "plumber"
+    },
+    {
+      "id": "ac96-2393-46c2-a9d0-08fbbf9b",
+      "point": 5,
+      "fullName": "JohnDoe",
+      "service": "plumber",
+      "comment": "perfect"
+    }
+  ],
+  "sliderimages": [
+    {
+      "id": "138f031f-3848-4600-a032-77915fdc4c10",
+      "imageUrl1": "https://porterchester.edu/sites/default/files/field/image/SuccessfulPlumber.jpg"
+    },
+    {
+      "id": "48ac7aa5-527b-4588-b044-89aeece2c19f",
+      "imageUrl1": "https://www.capitalccg.ac.uk/wp-content/uploads/2024/02/How-to-become-a-plumber-in-the-UK-4.jpg"
+    },
+    {
+      "id": "82e0f3c1-23f4-407e-84c8-abb05869c163",
+      "imageUrl1": "https://harrisplumbing.ca/img/hiring-light-1.jpg"
+    }
+  ]
+}
