@@ -4,7 +4,8 @@
       <div class="form w-full relative right-32">
         <div class="p-8">
           <div class="welcome mb-6">
-            <h3 class="text-2xl font-medium">HEY! XOŞ GƏLDİN!</h3>
+            <h3 clgit push heroku main
+            ass="text-2xl font-medium">HEY! XOŞ GƏLDİN!</h3>
             <p>Xahiş edirəm məlumatlarınizi daxil edin.</p>
           </div>
 
@@ -97,6 +98,7 @@
       clearError(field) {
         this.errors[field] = false
       },
+      //login
       async login() {
         if (this.validateForm()) {
           try {
