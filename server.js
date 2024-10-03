@@ -5,7 +5,6 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// db.json dosyasından verileri okuma endpoint'i
 app.get('/api/data/appliances', (req, res) => {
     fs.readFile(path.join(__dirname, 'db.json'), 'utf8', (err, data) => {
       if (err) {
@@ -15,7 +14,10 @@ app.get('/api/data/appliances', (req, res) => {
     });
 });
 
-// Sunucu başlatma
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  });
+  
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
