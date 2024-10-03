@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/contacts'
+const API_URL = 'https://localhost:3000/contacts'
 
 export const getAllContact = () => {
   return axios.get(API_URL)

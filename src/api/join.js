@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/joins'
+const API_URL = 'https://localhost:3000/joins'
 
 export const getAllJoin = () => {
   return axios.get(API_URL)

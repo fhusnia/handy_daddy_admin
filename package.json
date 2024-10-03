@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "format": "prettier --write \"src/**/*.{js,vue,scss,html}\"",
-    "start": "node yourServerFile.js"
+    "start": "node server.jss"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^43.0.0",
@@ -24,7 +24,7 @@
     "vue-router": "^3.5.3",
     "vue-sweetalert2": "^5.0.11",
     "vuex": "^3.6.2"
-  },
+    },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.25.7",

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/orders'
+const API_URL = 'https://localhost:3000/orders'
 
 export const getAllOrder = () => {
   return axios.get(API_URL)

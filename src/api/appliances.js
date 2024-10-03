@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/appliances'
+const API_URL = 'https://localhost:3000/appliances'
 
 export const getAllAppliances = () => {
   return axios.get(API_URL)

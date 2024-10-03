@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/sliderimages'
+const API_URL = 'https://localhost:3000/sliderimages'
 
 export const getAllSliderImage = () => {
   return axios.get(API_URL)

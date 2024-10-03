@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/lotteries'
+const API_URL = 'https://localhost:3000/lotteries'
 
 export const getAllLottery = () => {
   return axios.get(API_URL)
