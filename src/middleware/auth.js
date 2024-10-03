@@ -1,10 +1,10 @@
-import router from "@/router";
+import router from '@/router'
 
 export function auth({ next }) {
-  const isAuthenticated = !!sessionStorage.getItem("authToken");
+  const isAuthenticated = !!sessionStorage.getItem('authToken')
   if (isAuthenticated) {
-    return next();
+    return next()
   } else {
-    return next(router.push({ name: "login" }));
+    return next(router.push({ name: 'login' }))
   }
 }

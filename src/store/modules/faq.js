@@ -1,6 +1,6 @@
-import { FaqAction } from "../actions";
-import { faqGetters } from "../getters";
-import { FaqMutations } from "../mutations";
+import { FaqAction } from '../actions'
+import { faqGetters } from '../getters'
+import { FaqMutations } from '../mutations'
 
 export const Faq = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const Faq = {
   mutations: FaqMutations,
   getters: faqGetters,
   actions: FaqAction,
-};
+}

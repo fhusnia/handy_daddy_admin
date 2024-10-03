@@ -1,6 +1,6 @@
-import { HomeWhyUsAction } from "../actions";
-import { homewhyusGetters } from "../getters";
-import { HOMEWHYUSMutations } from "../mutations";
+import { HomeWhyUsAction } from '../actions'
+import { homewhyusGetters } from '../getters'
+import { HOMEWHYUSMutations } from '../mutations'
 
 export const HomeWhyUS = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const HomeWhyUS = {
   mutations: HOMEWHYUSMutations,
   getters: homewhyusGetters,
   actions: HomeWhyUsAction,
-};
+}

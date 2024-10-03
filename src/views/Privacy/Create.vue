@@ -62,130 +62,130 @@
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { showCancelAlert, showSaveAlert } from "@/utils/sweetalert";
-import { mapActions } from "vuex";
-import Swal from "sweetalert2";
-import { v4 as uuidv4 } from "uuid";
+  import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+  import { showCancelAlert, showSaveAlert } from '@/utils/sweetalert'
+  import { mapActions } from 'vuex'
+  import Swal from 'sweetalert2'
+  import { v4 as uuidv4 } from 'uuid'
 
-export default {
-  name: "PrivacyCreate",
-  data() {
-    return {
-      editor: ClassicEditor,
-      editorConfig: {
-        height: 900,
-      },
-      id: null,
-      title: "",
-      description: "",
-      privacyID: null,
-      errors: {
-        title: false,
-        description: false,
-      },
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.privacyID = this.$route.params.id;
-      this.loadPrivacy(this.privacyID);
-    }
-  },
-
-  methods: {
-    ...mapActions("privacies", [
-      "createPrivacy",
-      "updatePrivacy",
-      "getPrivacyId",
-    ]),
-
-    onEditorInput(event) {
-      this.description = event;
-
-      this.description = event;
-
-      this.clearError("description");
-    },
-
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        description: !this.description,
-        title: !this.title,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  export default {
+    name: 'PrivacyCreate',
+    data() {
+      return {
+        editor: ClassicEditor,
+        editorConfig: {
+          height: 900,
+        },
+        id: null,
+        title: '',
+        description: '',
+        privacyID: null,
+        errors: {
+          title: false,
+          description: false,
+        },
       }
-      return valid;
+    },
+    created() {
+      if (this.$route.params.id) {
+        this.privacyID = this.$route.params.id
+        this.loadPrivacy(this.privacyID)
+      }
     },
 
-    clearError(field) {
-      this.errors[field] = false;
-    },
-    async loadPrivacy(id) {
-      try {
-        await this.$store.dispatch("privacies/getPrivacyId", id);
-        const privacy = this.$store.getters["privacies/getprivacy"](id);
-        const savedData = JSON.parse(localStorage.getItem("getPrivacy"));
-        if (privacy) {
-          this.description = privacy.description || "";
-          this.title = privacy.title || "";
-        } else if (savedData) {
-          this.description = savedData.description || "";
-          this.title = savedData.title || "";
+    methods: {
+      ...mapActions('privacies', [
+        'createPrivacy',
+        'updatePrivacy',
+        'getPrivacyId',
+      ]),
+
+      onEditorInput(event) {
+        this.description = event
+
+        this.description = event
+
+        this.clearError('description')
+      },
+
+      validateForm() {
+        let valid = true
+        this.errors = {
+          description: !this.description,
+          title: !this.title,
         }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    },
-    async cancel() {
-      const result = await showCancelAlert(this.$router);
-      if (result.isConfirmed) {
-        setTimeout(() => {
-          this.$router.push("/privacy");
-        }, 500);
-      } else if (result.dismiss === "cancel") {
-        console.log("cancel");
-      }
-    },
-    async save() {
-      const result = await showSaveAlert();
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
 
-      if (result.isConfirmed) {
-        if (this.validateForm()) {
-          const privacyData = {
-            id: this.id || uuidv4(),
-            description: this.description,
-            title: this.title,
-          };
+      clearError(field) {
+        this.errors[field] = false
+      },
+      async loadPrivacy(id) {
+        try {
+          await this.$store.dispatch('privacies/getPrivacyId', id)
+          const privacy = this.$store.getters['privacies/getprivacy'](id)
+          const savedData = JSON.parse(localStorage.getItem('getPrivacy'))
+          if (privacy) {
+            this.description = privacy.description || ''
+            this.title = privacy.title || ''
+          } else if (savedData) {
+            this.description = savedData.description || ''
+            this.title = savedData.title || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
+      async cancel() {
+        const result = await showCancelAlert(this.$router)
+        if (result.isConfirmed) {
+          setTimeout(() => {
+            this.$router.push('/privacy')
+          }, 500)
+        } else if (result.dismiss === 'cancel') {
+          console.log('cancel')
+        }
+      },
+      async save() {
+        const result = await showSaveAlert()
 
-          try {
-            if (this.privacyID) {
-              this.updatePrivacy({ id: this.privacyID, privacy: privacyData });
-            } else {
-              this.createPrivacy(privacyData);
+        if (result.isConfirmed) {
+          if (this.validateForm()) {
+            const privacyData = {
+              id: this.id || uuidv4(),
+              description: this.description,
+              title: this.title,
             }
 
-            Swal.fire({
-              title: "Saved!",
-              text: "Your changes have been saved.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            try {
+              if (this.privacyID) {
+                this.updatePrivacy({ id: this.privacyID, privacy: privacyData })
+              } else {
+                this.createPrivacy(privacyData)
+              }
 
-            setTimeout(() => {
-              this.$router.push("/privacy");
-            }, 1500);
-          } catch (error) {
-            console.log(error);
+              Swal.fire({
+                title: 'Saved!',
+                text: 'Your changes have been saved.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+              })
+
+              setTimeout(() => {
+                this.$router.push('/privacy')
+              }, 1500)
+            } catch (error) {
+              console.log(error)
+            }
           }
         }
-      }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style></style>

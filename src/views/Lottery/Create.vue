@@ -81,124 +81,124 @@
 </template>
 
 <script>
-import { showCancelAlert, showSaveAlert } from "@/utils/sweetalert";
-import { mapActions } from "vuex";
-import Swal from "sweetalert2";
-import { v4 as uuidv4 } from "uuid";
-export default {
-  name: "LotteryCreate",
-  data() {
-    return {
-      id: null,
-      question1: "",
-      question2: "",
-      text: "",
-      lotteryID: null,
-      errors: {
-        question1: false,
-        question2: false,
-        text: false,
-      },
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.lotteryID = this.$route.params.id;
-      this.loadLottery(this.lotteryID);
-    }
-  },
-
-  methods: {
-    ...mapActions("lotteries", [
-      "createLottery",
-      "updateLottery",
-      "getLotteryId",
-    ]),
-
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        question1: !this.question1,
-        question2: !this.question2,
-        text: !this.text,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  import { showCancelAlert, showSaveAlert } from '@/utils/sweetalert'
+  import { mapActions } from 'vuex'
+  import Swal from 'sweetalert2'
+  import { v4 as uuidv4 } from 'uuid'
+  export default {
+    name: 'LotteryCreate',
+    data() {
+      return {
+        id: null,
+        question1: '',
+        question2: '',
+        text: '',
+        lotteryID: null,
+        errors: {
+          question1: false,
+          question2: false,
+          text: false,
+        },
       }
-      return valid;
+    },
+    created() {
+      if (this.$route.params.id) {
+        this.lotteryID = this.$route.params.id
+        this.loadLottery(this.lotteryID)
+      }
     },
 
-    clearError(field) {
-      this.errors[field] = false;
-    },
+    methods: {
+      ...mapActions('lotteries', [
+        'createLottery',
+        'updateLottery',
+        'getLotteryId',
+      ]),
 
-    async loadLottery(id) {
-      try {
-        await this.$store.dispatch("lotteries/getLotteryId", id);
-        const lottery = this.$store.getters["lotteries/getLottery"](id);
-        const savedData = JSON.parse(localStorage.getItem("getLottery"));
-        if (lottery) {
-          this.question1 = lottery.question1 || "";
-          this.question2 = lottery.question2 || "";
-          this.text = lottery.text || "";
-        } else if (savedData) {
-          this.question1 = savedData.question1 || "";
-          this.question2 = savedData.question2 || "";
-          this.text = savedData.text || "";
+      validateForm() {
+        let valid = true
+        this.errors = {
+          question1: !this.question1,
+          question2: !this.question2,
+          text: !this.text,
         }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    },
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
 
-    async cancel() {
-      const result = await showCancelAlert(this.$router);
-      if (result.isConfirmed) {
-        setTimeout(() => {
-          this.$router.push("/lottery");
-        }, 500);
-      } else if (result.dismiss === "cancel") {
-        console.log("cancel");
-      }
-    },
+      clearError(field) {
+        this.errors[field] = false
+      },
 
-    async save() {
-      const result = await showSaveAlert();
-      if (result.isConfirmed) {
-        if (this.validateForm()) {
-          const lotteryData = {
-            id: this.id || uuidv4(),
-            question1: this.question1,
-            question2: this.question2,
-            text: this.text,
-          };
+      async loadLottery(id) {
+        try {
+          await this.$store.dispatch('lotteries/getLotteryId', id)
+          const lottery = this.$store.getters['lotteries/getLottery'](id)
+          const savedData = JSON.parse(localStorage.getItem('getLottery'))
+          if (lottery) {
+            this.question1 = lottery.question1 || ''
+            this.question2 = lottery.question2 || ''
+            this.text = lottery.text || ''
+          } else if (savedData) {
+            this.question1 = savedData.question1 || ''
+            this.question2 = savedData.question2 || ''
+            this.text = savedData.text || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
 
-          try {
-            if (this.lotteryID) {
-              this.updateLottery({ id: this.lotteryID, lottery: lotteryData });
-            } else {
-              this.createLottery(lotteryData);
+      async cancel() {
+        const result = await showCancelAlert(this.$router)
+        if (result.isConfirmed) {
+          setTimeout(() => {
+            this.$router.push('/lottery')
+          }, 500)
+        } else if (result.dismiss === 'cancel') {
+          console.log('cancel')
+        }
+      },
+
+      async save() {
+        const result = await showSaveAlert()
+        if (result.isConfirmed) {
+          if (this.validateForm()) {
+            const lotteryData = {
+              id: this.id || uuidv4(),
+              question1: this.question1,
+              question2: this.question2,
+              text: this.text,
             }
 
-            Swal.fire({
-              title: "Saved!",
-              text: "Your changes have been saved.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            try {
+              if (this.lotteryID) {
+                this.updateLottery({ id: this.lotteryID, lottery: lotteryData })
+              } else {
+                this.createLottery(lotteryData)
+              }
 
-            setTimeout(() => {
-              this.$router.push("/lottery");
-            }, 1500);
-          } catch (error) {
-            console.log(error);
+              Swal.fire({
+                title: 'Saved!',
+                text: 'Your changes have been saved.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+              })
+
+              setTimeout(() => {
+                this.$router.push('/lottery')
+              }, 1500)
+            } catch (error) {
+              console.log(error)
+            }
           }
         }
-      }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style></style>

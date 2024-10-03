@@ -99,144 +99,144 @@
 </template>
 
 <script>
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { showCancelAlert, showSaveAlert } from "@/utils/sweetalert";
-import { mapActions } from "vuex";
-import Swal from "sweetalert2";
-import { v4 as uuidv4 } from "uuid";
+  import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+  import { showCancelAlert, showSaveAlert } from '@/utils/sweetalert'
+  import { mapActions } from 'vuex'
+  import Swal from 'sweetalert2'
+  import { v4 as uuidv4 } from 'uuid'
 
-export default {
-  name: "CreateB",
-  data() {
-    return {
-      editor: ClassicEditor,
-      editorConfig: {
-        height: 900,
-      },
-      id: null,
-      imageUrl: "",
-      title: "",
-      contentheader: "",
-      content: "",
-      date: new Date().toISOString().split("T")[0],
-      blogID: null,
-      errors: {
-        imageUrl: false,
-        title: false,
-        contentheader: false,
-        content: false,
-      },
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.blogID = this.$route.params.id;
-      this.loadBlog(this.blogID);
-    }
-  },
-
-  methods: {
-    ...mapActions("blogs", ["createBlog", "updateBlog", "getBlogID"]),
-
-    onEditorInput(event) {
-      this.contentheader = event;
-
-      this.contentheader = event;
-
-      this.clearError("contentheader");
-    },
-
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        imageUrl: !this.imageUrl,
-        title: !this.title,
-        contentheader: !this.contentheader,
-        content: !this.content,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  export default {
+    name: 'CreateB',
+    data() {
+      return {
+        editor: ClassicEditor,
+        editorConfig: {
+          height: 900,
+        },
+        id: null,
+        imageUrl: '',
+        title: '',
+        contentheader: '',
+        content: '',
+        date: new Date().toISOString().split('T')[0],
+        blogID: null,
+        errors: {
+          imageUrl: false,
+          title: false,
+          contentheader: false,
+          content: false,
+        },
       }
-      return valid;
+    },
+    created() {
+      if (this.$route.params.id) {
+        this.blogID = this.$route.params.id
+        this.loadBlog(this.blogID)
+      }
     },
 
-    clearError(field) {
-      this.errors[field] = false;
-    },
-    async loadBlog(id) {
-      try {
-        await this.$store.dispatch("blogs/getBlogID", id);
-        const blog = this.$store.getters["blogs/getBlog"](id);
-        const savedData = JSON.parse(localStorage.getItem("getBlog"));
-        if (blog) {
-          this.imageUrl = blog.imageUrl || "";
-          this.title = blog.title || "";
-          this.contentheader = blog.contentheader || "";
-          this.content = blog.content || "";
-        } else if (savedData) {
-          this.imageUrl = savedData.imageUrl || "";
-          this.title = savedData.title || "";
-          this.contentheader = savedData.contentheader || "";
-          this.content = savedData.content || "";
+    methods: {
+      ...mapActions('blogs', ['createBlog', 'updateBlog', 'getBlogID']),
+
+      onEditorInput(event) {
+        this.contentheader = event
+
+        this.contentheader = event
+
+        this.clearError('contentheader')
+      },
+
+      validateForm() {
+        let valid = true
+        this.errors = {
+          imageUrl: !this.imageUrl,
+          title: !this.title,
+          contentheader: !this.contentheader,
+          content: !this.content,
         }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    },
-    async cancel() {
-      const result = await showCancelAlert(this.$router);
-      if (result.isConfirmed) {
-        setTimeout(() => {
-          this.$router.push("/blogs");
-        }, 500);
-      } else if (result.dismiss === "cancel") {
-        console.log("cancel");
-      }
-    },
-    async save() {
-      const result = await showSaveAlert();
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
 
-      if (result.isConfirmed) {
-        if (this.validateForm()) {
-          const blogData = {
-            id: this.id || uuidv4(),
-            imageUrl: this.imageUrl,
-            title: this.title,
-            contentheader: this.contentheader,
-            content: this.content,
-            date: this.date,
-          };
+      clearError(field) {
+        this.errors[field] = false
+      },
+      async loadBlog(id) {
+        try {
+          await this.$store.dispatch('blogs/getBlogID', id)
+          const blog = this.$store.getters['blogs/getBlog'](id)
+          const savedData = JSON.parse(localStorage.getItem('getBlog'))
+          if (blog) {
+            this.imageUrl = blog.imageUrl || ''
+            this.title = blog.title || ''
+            this.contentheader = blog.contentheader || ''
+            this.content = blog.content || ''
+          } else if (savedData) {
+            this.imageUrl = savedData.imageUrl || ''
+            this.title = savedData.title || ''
+            this.contentheader = savedData.contentheader || ''
+            this.content = savedData.content || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
+      async cancel() {
+        const result = await showCancelAlert(this.$router)
+        if (result.isConfirmed) {
+          setTimeout(() => {
+            this.$router.push('/blogs')
+          }, 500)
+        } else if (result.dismiss === 'cancel') {
+          console.log('cancel')
+        }
+      },
+      async save() {
+        const result = await showSaveAlert()
 
-          try {
-            if (this.blogID) {
-              this.updateBlog({ id: this.blogID, blog: blogData });
-            } else {
-              this.createBlog(blogData);
+        if (result.isConfirmed) {
+          if (this.validateForm()) {
+            const blogData = {
+              id: this.id || uuidv4(),
+              imageUrl: this.imageUrl,
+              title: this.title,
+              contentheader: this.contentheader,
+              content: this.content,
+              date: this.date,
             }
 
-            Swal.fire({
-              title: "Saved!",
-              text: "Your changes have been saved.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            try {
+              if (this.blogID) {
+                this.updateBlog({ id: this.blogID, blog: blogData })
+              } else {
+                this.createBlog(blogData)
+              }
 
-            setTimeout(() => {
-              this.$router.push("/blogs");
-            }, 1500);
-          } catch (error) {
-            console.log(error);
+              Swal.fire({
+                title: 'Saved!',
+                text: 'Your changes have been saved.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+              })
+
+              setTimeout(() => {
+                this.$router.push('/blogs')
+              }, 1500)
+            } catch (error) {
+              console.log(error)
+            }
           }
         }
-      }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style>
-.ck-editor__editable_inline {
-  min-height: 400px; /* Adjust this value as needed */
-}
+  .ck-editor__editable_inline {
+    min-height: 400px; /* Adjust this value as needed */
+  }
 </style>

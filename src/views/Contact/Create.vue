@@ -114,138 +114,138 @@
 </template>
 
 <script>
-import { showCancelAlert, showSaveAlert } from "@/utils/sweetalert";
-import { mapActions } from "vuex";
-import Swal from "sweetalert2";
-import { v4 as uuidv4 } from "uuid";
+  import { showCancelAlert, showSaveAlert } from '@/utils/sweetalert'
+  import { mapActions } from 'vuex'
+  import Swal from 'sweetalert2'
+  import { v4 as uuidv4 } from 'uuid'
 
-export default {
-  name: "ContactCreate",
-  data() {
-    return {
-      id: null,
-      phone1: "",
-      phone2: "",
-      email1: "",
-      email2: "",
-      site: "",
-      contactID: null,
-      errors: {
-        phone1: false,
-        phone2: false,
-        email1: false,
-        email2: false,
-        site: false,
-      },
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.contactID = this.$route.params.id;
-      this.loadContact(this.contactID);
-    }
-  },
-
-  methods: {
-    ...mapActions("contacts", [
-      "createContact",
-      "updateContact",
-      "getContactId",
-    ]),
-
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        phone1: !this.phone1,
-        phone2: !this.phone2,
-        email1: !this.email1,
-        email2: !this.email2,
-        site: !this.site,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  export default {
+    name: 'ContactCreate',
+    data() {
+      return {
+        id: null,
+        phone1: '',
+        phone2: '',
+        email1: '',
+        email2: '',
+        site: '',
+        contactID: null,
+        errors: {
+          phone1: false,
+          phone2: false,
+          email1: false,
+          email2: false,
+          site: false,
+        },
       }
-      return valid;
+    },
+    created() {
+      if (this.$route.params.id) {
+        this.contactID = this.$route.params.id
+        this.loadContact(this.contactID)
+      }
     },
 
-    clearError(field) {
-      this.errors[field] = false;
-    },
+    methods: {
+      ...mapActions('contacts', [
+        'createContact',
+        'updateContact',
+        'getContactId',
+      ]),
 
-    async loadContact(id) {
-      try {
-        await this.$store.dispatch("contacts/getContactId", id);
-        const contact = this.$store.getters["contacts/getContact"](id);
-        const savedData = JSON.parse(localStorage.getItem("getContact"));
-        if (contact) {
-          this.phone1 = contact.phone1 || "";
-          this.phone2 = contact.phone2 || "";
-          this.email1 = contact.email1 || "";
-          this.email2 = contact.email2 || "";
-          this.site = contact.site || "";
-        } else if (savedData) {
-          this.phone1 = savedData.phone1 || "";
-          this.phone2 = savedData.phone2 || "";
-          this.email1 = savedData.email1 || "";
-          this.email2 = savedData.email2 || "";
-          this.site = savedData.site || "";
+      validateForm() {
+        let valid = true
+        this.errors = {
+          phone1: !this.phone1,
+          phone2: !this.phone2,
+          email1: !this.email1,
+          email2: !this.email2,
+          site: !this.site,
         }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    },
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
 
-    async cancel() {
-      const result = await showCancelAlert(this.$router);
-      if (result.isConfirmed) {
-        setTimeout(() => {
-          this.$router.push("/contact");
-        }, 500);
-      } else if (result.dismiss === "cancel") {
-        console.log("cancel");
-      }
-    },
+      clearError(field) {
+        this.errors[field] = false
+      },
 
-    async save() {
-      const result = await showSaveAlert();
-      if (result.isConfirmed) {
-        if (this.validateForm()) {
-          const contactdata = {
-            id: this.id || uuidv4(),
-            phone1: this.phone1,
-            phone2: this.phone2,
-            email1: this.email1,
-            email2: this.email2,
-            site: this.site,
-            date: this.date,
-          };
+      async loadContact(id) {
+        try {
+          await this.$store.dispatch('contacts/getContactId', id)
+          const contact = this.$store.getters['contacts/getContact'](id)
+          const savedData = JSON.parse(localStorage.getItem('getContact'))
+          if (contact) {
+            this.phone1 = contact.phone1 || ''
+            this.phone2 = contact.phone2 || ''
+            this.email1 = contact.email1 || ''
+            this.email2 = contact.email2 || ''
+            this.site = contact.site || ''
+          } else if (savedData) {
+            this.phone1 = savedData.phone1 || ''
+            this.phone2 = savedData.phone2 || ''
+            this.email1 = savedData.email1 || ''
+            this.email2 = savedData.email2 || ''
+            this.site = savedData.site || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
 
-          try {
-            if (this.contactID) {
-              this.updateContact({ id: this.contactID, contact: contactdata });
-            } else {
-              this.createContact(contactdata);
+      async cancel() {
+        const result = await showCancelAlert(this.$router)
+        if (result.isConfirmed) {
+          setTimeout(() => {
+            this.$router.push('/contact')
+          }, 500)
+        } else if (result.dismiss === 'cancel') {
+          console.log('cancel')
+        }
+      },
+
+      async save() {
+        const result = await showSaveAlert()
+        if (result.isConfirmed) {
+          if (this.validateForm()) {
+            const contactdata = {
+              id: this.id || uuidv4(),
+              phone1: this.phone1,
+              phone2: this.phone2,
+              email1: this.email1,
+              email2: this.email2,
+              site: this.site,
+              date: this.date,
             }
 
-            Swal.fire({
-              title: "Saved!",
-              text: "Your changes have been saved.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            try {
+              if (this.contactID) {
+                this.updateContact({ id: this.contactID, contact: contactdata })
+              } else {
+                this.createContact(contactdata)
+              }
 
-            setTimeout(() => {
-              this.$router.push("/contact");
-            }, 1500);
-          } catch (error) {
-            console.log(error);
+              Swal.fire({
+                title: 'Saved!',
+                text: 'Your changes have been saved.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+              })
+
+              setTimeout(() => {
+                this.$router.push('/contact')
+              }, 1500)
+            } catch (error) {
+              console.log(error)
+            }
           }
         }
-      }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style></style>

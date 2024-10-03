@@ -28,50 +28,50 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-export default {
-  name: "ReAd",
-  data() {
-    return {
-      fullName: "",
-      phone: "",
-      selectfield: "",
-      text: "",
-      contactformID: null,
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.contactformID = this.$route.params.id;
-      this.loadContactForm(this.contactformID);
-    }
-  },
-
-  methods: {
-    async loadContactForm(id) {
-      try {
-        await this.$store.dispatch("contactforms/getContactformID", id);
-        const contactform =
-          this.$store.getters["contactforms/getContactform"](id);
-        const savedData = JSON.parse(localStorage.getItem("getContactform"));
-        if (contactform) {
-          this.fullName = contactform.fullName || "";
-          this.email = contactform.email || "";
-          this.text = contactform.text || "";
-        } else if (savedData) {
-          this.fullName = savedData.fullName || "";
-          this.email = savedData.email || "";
-          this.text = savedData.text || "";
-        }
-      } catch (error) {
-        console.error("Error ", error);
+  import { mapGetters } from 'vuex'
+  export default {
+    name: 'ReAd',
+    data() {
+      return {
+        fullName: '',
+        phone: '',
+        selectfield: '',
+        text: '',
+        contactformID: null,
       }
     },
-  },
-  computed: {
-    ...mapGetters("contactforms", ["contactforms"]),
-  },
-};
+    created() {
+      if (this.$route.params.id) {
+        this.contactformID = this.$route.params.id
+        this.loadContactForm(this.contactformID)
+      }
+    },
+
+    methods: {
+      async loadContactForm(id) {
+        try {
+          await this.$store.dispatch('contactforms/getContactformID', id)
+          const contactform =
+            this.$store.getters['contactforms/getContactform'](id)
+          const savedData = JSON.parse(localStorage.getItem('getContactform'))
+          if (contactform) {
+            this.fullName = contactform.fullName || ''
+            this.email = contactform.email || ''
+            this.text = contactform.text || ''
+          } else if (savedData) {
+            this.fullName = savedData.fullName || ''
+            this.email = savedData.email || ''
+            this.text = savedData.text || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
+    },
+    computed: {
+      ...mapGetters('contactforms', ['contactforms']),
+    },
+  }
 </script>
 
 <style></style>

@@ -1,6 +1,6 @@
-import { LotteryAction } from "../actions";
-import { lotteryGetters } from "../getters";
-import { LOTTERYMutations } from "../mutations";
+import { LotteryAction } from '../actions'
+import { lotteryGetters } from '../getters'
+import { LOTTERYMutations } from '../mutations'
 
 export const Lottery = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const Lottery = {
   mutations: LOTTERYMutations,
   getters: lotteryGetters,
   actions: LotteryAction,
-};
+}

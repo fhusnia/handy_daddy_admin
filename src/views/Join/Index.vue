@@ -50,48 +50,48 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { showDeleteAlert } from "@/utils/sweetalert";
-import Swal from "sweetalert2";
+  import { mapActions, mapGetters } from 'vuex'
+  import { showDeleteAlert } from '@/utils/sweetalert'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "JoinIndex",
-  mounted() {
-    this.getAllJoin();
-  },
-  methods: {
-    ...mapActions("joins", ["getAllJoin", "deleteJoin"]),
-
-    async getAllJoin() {
-      try {
-        await this.$store.dispatch("joins/getAllJoin");
-      } catch (error) {
-        console.error("Error", error);
-      }
+  export default {
+    name: 'JoinIndex',
+    mounted() {
+      this.getAllJoin()
     },
-    async deleteJoin(id) {
-      const result = await showDeleteAlert();
-      if (result.isConfirmed) {
+    methods: {
+      ...mapActions('joins', ['getAllJoin', 'deleteJoin']),
+
+      async getAllJoin() {
         try {
-          await this.$store.dispatch("joins/deleteJoin", id);
-
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          await this.$store.dispatch('joins/getAllJoin')
         } catch (error) {
-          console.error(error);
+          console.error('Error', error)
         }
-      }
+      },
+      async deleteJoin(id) {
+        const result = await showDeleteAlert()
+        if (result.isConfirmed) {
+          try {
+            await this.$store.dispatch('joins/deleteJoin', id)
+
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your item has been deleted.',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
+            })
+          } catch (error) {
+            console.error(error)
+          }
+        }
+      },
     },
-  },
-  computed: {
-    ...mapGetters("joins", ["joins"]),
-  },
-};
+    computed: {
+      ...mapGetters('joins', ['joins']),
+    },
+  }
 </script>
 
 <style></style>

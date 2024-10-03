@@ -1,6 +1,6 @@
-import { WHYUSAction } from "../actions";
-import { whyusGetters } from "../getters";
-import { WhyusMutations } from "../mutations";
+import { WHYUSAction } from '../actions'
+import { whyusGetters } from '../getters'
+import { WhyusMutations } from '../mutations'
 
 export const WhyuS = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const WhyuS = {
   mutations: WhyusMutations,
   getters: whyusGetters,
   actions: WHYUSAction,
-};
+}

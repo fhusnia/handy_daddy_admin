@@ -66,60 +66,60 @@
 </template>
 
 <script>
-import axios from "axios";
+  import axios from 'axios'
 
-export default {
-  data() {
-    return {
-      email: "",
-      password: "",
-      token: null,
-      errors: {
-        email: false,
-        password: false,
-      },
-      error: "",
-    };
-  },
-  methods: {
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        email: !this.email,
-        password: !this.password,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  export default {
+    data() {
+      return {
+        email: '',
+        password: '',
+        token: null,
+        errors: {
+          email: false,
+          password: false,
+        },
+        error: '',
       }
-      return valid;
     },
-
-    clearError(field) {
-      this.errors[field] = false;
-    },
-    async login() {
-      if (this.validateForm()) {
-        try {
-          const response = await axios.post("https://reqres.in/api/login", {
-            email: this.email,
-            password: this.password,
-          });
-          this.token = response.data.token;
-          sessionStorage.setItem("authToken", this.token);
-
-          this.$nextTick(() => {
-            if (this.$route.path !== "/blogs") {
-              this.$router.push({ name: "Blog" });
-            }
-          });
-        } catch (error) {
-          console.error(error);
-          this.error = "Invalid email or password";
+    methods: {
+      validateForm() {
+        let valid = true
+        this.errors = {
+          email: !this.email,
+          password: !this.password,
         }
-      }
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
+
+      clearError(field) {
+        this.errors[field] = false
+      },
+      async login() {
+        if (this.validateForm()) {
+          try {
+            const response = await axios.post('https://reqres.in/api/login', {
+              email: this.email,
+              password: this.password,
+            })
+            this.token = response.data.token
+            sessionStorage.setItem('authToken', this.token)
+
+            this.$nextTick(() => {
+              if (this.$route.path !== '/blogs') {
+                this.$router.push({ name: 'Blog' })
+              }
+            })
+          } catch (error) {
+            console.error(error)
+            this.error = 'Invalid email or password'
+          }
+        }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style></style>

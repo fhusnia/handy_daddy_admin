@@ -1,6 +1,6 @@
-import { PRIVACYAction } from "../actions";
-import { privacyGetters } from "../getters";
-import { PrivacyMutations } from "../mutations";
+import { PRIVACYAction } from '../actions'
+import { privacyGetters } from '../getters'
+import { PrivacyMutations } from '../mutations'
 
 export const Privacy = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const Privacy = {
   mutations: PrivacyMutations,
   getters: privacyGetters,
   actions: PRIVACYAction,
-};
+}

@@ -63,114 +63,114 @@
 </template>
 
 <script>
-import { showCancelAlert, showSaveAlert } from "@/utils/sweetalert";
-import { mapActions } from "vuex";
-import Swal from "sweetalert2";
-import { v4 as uuidv4 } from "uuid";
-export default {
-  name: "FaqCreate",
-  data() {
-    return {
-      id: null,
-      question: "",
-      description: "",
-      questionID: null,
-      errors: {
-        question: false,
-        description: false,
-      },
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.questionID = this.$route.params.id;
-      this.loadFaq(this.questionID);
-    }
-  },
-
-  methods: {
-    ...mapActions("faqs", ["createFaq", "updateFaq", "getFaqId"]),
-
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        question: !this.question,
-        description: !this.description,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  import { showCancelAlert, showSaveAlert } from '@/utils/sweetalert'
+  import { mapActions } from 'vuex'
+  import Swal from 'sweetalert2'
+  import { v4 as uuidv4 } from 'uuid'
+  export default {
+    name: 'FaqCreate',
+    data() {
+      return {
+        id: null,
+        question: '',
+        description: '',
+        questionID: null,
+        errors: {
+          question: false,
+          description: false,
+        },
       }
-      return valid;
+    },
+    created() {
+      if (this.$route.params.id) {
+        this.questionID = this.$route.params.id
+        this.loadFaq(this.questionID)
+      }
     },
 
-    clearError(field) {
-      this.errors[field] = false;
-    },
+    methods: {
+      ...mapActions('faqs', ['createFaq', 'updateFaq', 'getFaqId']),
 
-    async loadFaq(id) {
-      try {
-        await this.$store.dispatch("faqs/getFaqId", id);
-        const faq = this.$store.getters["faqs/getFaq"](id);
-        const savedData = JSON.parse(localStorage.getItem("getFaq"));
-        if (faq) {
-          this.question = faq.question || "";
-          this.description = faq.description || "";
-        } else if (savedData) {
-          this.question = savedData.question || "";
-          this.description = savedData.description || "";
+      validateForm() {
+        let valid = true
+        this.errors = {
+          question: !this.question,
+          description: !this.description,
         }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    },
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
 
-    async cancel() {
-      const result = await showCancelAlert(this.$router);
-      if (result.isConfirmed) {
-        setTimeout(() => {
-          this.$router.push("/faq");
-        }, 500);
-      } else if (result.dismiss === "cancel") {
-        console.log("cancel");
-      }
-    },
+      clearError(field) {
+        this.errors[field] = false
+      },
 
-    async save() {
-      const result = await showSaveAlert();
-      if (result.isConfirmed) {
-        if (this.validateForm()) {
-          const faqdata = {
-            id: this.id || uuidv4(),
-            question: this.question,
-            description: this.description,
-          };
+      async loadFaq(id) {
+        try {
+          await this.$store.dispatch('faqs/getFaqId', id)
+          const faq = this.$store.getters['faqs/getFaq'](id)
+          const savedData = JSON.parse(localStorage.getItem('getFaq'))
+          if (faq) {
+            this.question = faq.question || ''
+            this.description = faq.description || ''
+          } else if (savedData) {
+            this.question = savedData.question || ''
+            this.description = savedData.description || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
 
-          try {
-            if (this.questionID) {
-              this.updateFaq({ id: this.questionID, contact: faqdata });
-            } else {
-              this.createFaq(faqdata);
+      async cancel() {
+        const result = await showCancelAlert(this.$router)
+        if (result.isConfirmed) {
+          setTimeout(() => {
+            this.$router.push('/faq')
+          }, 500)
+        } else if (result.dismiss === 'cancel') {
+          console.log('cancel')
+        }
+      },
+
+      async save() {
+        const result = await showSaveAlert()
+        if (result.isConfirmed) {
+          if (this.validateForm()) {
+            const faqdata = {
+              id: this.id || uuidv4(),
+              question: this.question,
+              description: this.description,
             }
 
-            Swal.fire({
-              title: "Saved!",
-              text: "Your changes have been saved.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            try {
+              if (this.questionID) {
+                this.updateFaq({ id: this.questionID, contact: faqdata })
+              } else {
+                this.createFaq(faqdata)
+              }
 
-            setTimeout(() => {
-              this.$router.push("/faq");
-            }, 1500);
-          } catch (error) {
-            console.log(error);
+              Swal.fire({
+                title: 'Saved!',
+                text: 'Your changes have been saved.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+              })
+
+              setTimeout(() => {
+                this.$router.push('/faq')
+              }, 1500)
+            } catch (error) {
+              console.log(error)
+            }
           }
         }
-      }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style></style>

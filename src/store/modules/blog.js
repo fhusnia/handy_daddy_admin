@@ -1,6 +1,6 @@
-import { BlogMutations } from "../mutations";
-import { blogGetters } from "../getters";
-import { BlogAction } from "../actions";
+import { BlogMutations } from '../mutations'
+import { blogGetters } from '../getters'
+import { BlogAction } from '../actions'
 
 export const Blog = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const Blog = {
   mutations: BlogMutations,
   getters: blogGetters,
   actions: BlogAction,
-};
+}

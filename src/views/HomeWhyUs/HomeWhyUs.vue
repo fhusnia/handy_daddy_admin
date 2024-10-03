@@ -52,48 +52,48 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { showDeleteAlert } from "@/utils/sweetalert";
-import Swal from "sweetalert2";
+  import { mapActions, mapGetters } from 'vuex'
+  import { showDeleteAlert } from '@/utils/sweetalert'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "HomeWhyUS",
-  mounted() {
-    this.getAllHomewhyus();
-  },
-  methods: {
-    ...mapActions("homewhyuss", ["getAllHomewhyus", "deleteHomewhyus"]),
-
-    async getAllHomewhyus() {
-      try {
-        await this.$store.dispatch("homewhyuss/getAllHomewhyus");
-      } catch (error) {
-        console.error("Error", error);
-      }
+  export default {
+    name: 'HomeWhyUS',
+    mounted() {
+      this.getAllHomewhyus()
     },
-    async deleteHomewhyus(id) {
-      const result = await showDeleteAlert();
-      if (result.isConfirmed) {
+    methods: {
+      ...mapActions('homewhyuss', ['getAllHomewhyus', 'deleteHomewhyus']),
+
+      async getAllHomewhyus() {
         try {
-          await this.$store.dispatch("homewhyuss/deleteHomewhyus", id);
-
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          await this.$store.dispatch('homewhyuss/getAllHomewhyus')
         } catch (error) {
-          console.error(error);
+          console.error('Error', error)
         }
-      }
+      },
+      async deleteHomewhyus(id) {
+        const result = await showDeleteAlert()
+        if (result.isConfirmed) {
+          try {
+            await this.$store.dispatch('homewhyuss/deleteHomewhyus', id)
+
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your item has been deleted.',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
+            })
+          } catch (error) {
+            console.error(error)
+          }
+        }
+      },
     },
-  },
-  computed: {
-    ...mapGetters("homewhyuss", ["homewhyuss"]),
-  },
-};
+    computed: {
+      ...mapGetters('homewhyuss', ['homewhyuss']),
+    },
+  }
 </script>
 
 <style style=""></style>

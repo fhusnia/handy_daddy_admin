@@ -1,6 +1,6 @@
-import { JoinAction } from "../actions";
-import { joinGetters } from "../getters";
-import { JOINMutations } from "../mutations";
+import { JoinAction } from '../actions'
+import { joinGetters } from '../getters'
+import { JOINMutations } from '../mutations'
 
 export const Join = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const Join = {
   mutations: JOINMutations,
   getters: joinGetters,
   actions: JoinAction,
-};
+}

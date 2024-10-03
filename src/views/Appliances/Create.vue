@@ -136,151 +136,151 @@
 </template>
 
 <script>
-import { showCancelAlert, showSaveAlert } from "@/utils/sweetalert";
-import { mapActions } from "vuex";
-import { v4 as uuidv4 } from "uuid";
-import Swal from "sweetalert2";
+  import { showCancelAlert, showSaveAlert } from '@/utils/sweetalert'
+  import { mapActions } from 'vuex'
+  import { v4 as uuidv4 } from 'uuid'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "AppliancesCreate",
-  data() {
-    return {
-      id: null,
-      title: "",
-      icon: "",
-      content1: "",
-      content2: "",
-      imageUrl1: "",
-      imageUrl2: "",
-      applianceId: null,
-      errors: {
-        title: false,
-        icon: false,
-        content1: false,
-        content2: false,
-        imageUrl1: false,
-        imageUrl2: false,
-      },
-    };
-  },
-
-  created() {
-    if (this.$route.params.id) {
-      this.applianceId = this.$route.params.id;
-      this.loadAppliance(this.applianceId);
-    }
-  },
-  methods: {
-    ...mapActions("appliances", [
-      "createAppliance",
-      "updateAppliance",
-      "getApplianceById",
-    ]),
-
-    //formyoxlama
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        title: !this.title,
-        icon: !this.icon,
-        content1: !this.content1,
-        content2: !this.content2,
-        imageUrl1: !this.imageUrl1,
-        imageUrl2: !this.imageUrl2,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  export default {
+    name: 'AppliancesCreate',
+    data() {
+      return {
+        id: null,
+        title: '',
+        icon: '',
+        content1: '',
+        content2: '',
+        imageUrl1: '',
+        imageUrl2: '',
+        applianceId: null,
+        errors: {
+          title: false,
+          icon: false,
+          content1: false,
+          content2: false,
+          imageUrl1: false,
+          imageUrl2: false,
+        },
       }
-      return valid;
-    },
-    //inputerrortemizleme
-    clearError(field) {
-      this.errors[field] = false;
     },
 
-    async loadAppliance(id) {
-      try {
-        await this.$store.dispatch("appliances/getID", id);
-        const appliance = this.$store.getters["appliances/getAppliance"](id);
-        const savedData = JSON.parse(localStorage.getItem("vuexState"));
+    created() {
+      if (this.$route.params.id) {
+        this.applianceId = this.$route.params.id
+        this.loadAppliance(this.applianceId)
+      }
+    },
+    methods: {
+      ...mapActions('appliances', [
+        'createAppliance',
+        'updateAppliance',
+        'getApplianceById',
+      ]),
 
-        if (appliance) {
-          this.title = appliance.title || "";
-          this.icon = appliance.icon || "";
-          this.content1 = appliance.content1 || "";
-          this.content2 = appliance.content2 || "";
-          this.imageUrl1 = appliance.imageUrl1 || "";
-          this.imageUrl2 = appliance.imageUrl2 || "";
-        } else if (savedData) {
-          this.title = savedData.title || "";
-          this.icon = savedData.icon || "";
-          this.content1 = savedData.content1 || "";
-          this.content2 = savedData.content2 || "";
-          this.imageUrl1 = savedData.imageUrl1 || "";
-          this.imageUrl2 = savedData.imageUrl2 || "";
+      //formyoxlama
+      validateForm() {
+        let valid = true
+        this.errors = {
+          title: !this.title,
+          icon: !this.icon,
+          content1: !this.content1,
+          content2: !this.content2,
+          imageUrl1: !this.imageUrl1,
+          imageUrl2: !this.imageUrl2,
         }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    },
-    //CANCEL
-    async cancel() {
-      const result = await showCancelAlert(this.$router);
-      if (result.isConfirmed) {
-        setTimeout(() => {
-          this.$router.push("/appliances");
-        }, 500);
-      } else if (result.dismiss === "cancel") {
-        console.log("cancel");
-      }
-    },
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
+      //inputerrortemizleme
+      clearError(field) {
+        this.errors[field] = false
+      },
 
-    //CREATE AND EDIT
-    async saveAppliance() {
-      const result = await showSaveAlert();
+      async loadAppliance(id) {
+        try {
+          await this.$store.dispatch('appliances/getID', id)
+          const appliance = this.$store.getters['appliances/getAppliance'](id)
+          const savedData = JSON.parse(localStorage.getItem('vuexState'))
 
-      if (result.isConfirmed) {
-        if (this.validateForm()) {
-          const applianceData = {
-            id: this.id || uuidv4(),
-            title: this.title,
-            icon: this.icon,
-            content1: this.content1,
-            content2: this.content2,
-            imageUrl1: this.imageUrl1,
-            imageUrl2: this.imageUrl2,
-          };
+          if (appliance) {
+            this.title = appliance.title || ''
+            this.icon = appliance.icon || ''
+            this.content1 = appliance.content1 || ''
+            this.content2 = appliance.content2 || ''
+            this.imageUrl1 = appliance.imageUrl1 || ''
+            this.imageUrl2 = appliance.imageUrl2 || ''
+          } else if (savedData) {
+            this.title = savedData.title || ''
+            this.icon = savedData.icon || ''
+            this.content1 = savedData.content1 || ''
+            this.content2 = savedData.content2 || ''
+            this.imageUrl1 = savedData.imageUrl1 || ''
+            this.imageUrl2 = savedData.imageUrl2 || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
+      //CANCEL
+      async cancel() {
+        const result = await showCancelAlert(this.$router)
+        if (result.isConfirmed) {
+          setTimeout(() => {
+            this.$router.push('/appliances')
+          }, 500)
+        } else if (result.dismiss === 'cancel') {
+          console.log('cancel')
+        }
+      },
 
-          try {
-            // PUT AND POST
-            if (this.applianceId) {
-              await this.updateAppliance({
-                id: this.applianceId,
-                appliance: applianceData,
-              });
-            } else {
-              await this.createAppliance(applianceData);
+      //CREATE AND EDIT
+      async saveAppliance() {
+        const result = await showSaveAlert()
+
+        if (result.isConfirmed) {
+          if (this.validateForm()) {
+            const applianceData = {
+              id: this.id || uuidv4(),
+              title: this.title,
+              icon: this.icon,
+              content1: this.content1,
+              content2: this.content2,
+              imageUrl1: this.imageUrl1,
+              imageUrl2: this.imageUrl2,
             }
 
-            Swal.fire({
-              title: "Saved!",
-              text: "Your changes have been saved.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            try {
+              // PUT AND POST
+              if (this.applianceId) {
+                await this.updateAppliance({
+                  id: this.applianceId,
+                  appliance: applianceData,
+                })
+              } else {
+                await this.createAppliance(applianceData)
+              }
 
-            setTimeout(() => {
-              this.$router.push("/appliances");
-            }, 1500);
-          } catch (error) {
-            console.error("Error", error);
+              Swal.fire({
+                title: 'Saved!',
+                text: 'Your changes have been saved.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+              })
+
+              setTimeout(() => {
+                this.$router.push('/appliances')
+              }, 1500)
+            } catch (error) {
+              console.error('Error', error)
+            }
           }
         }
-      }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style></style>

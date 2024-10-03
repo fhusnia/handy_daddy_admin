@@ -1,6 +1,0 @@
-{
-  "extends": ["prettier"],
-    "plugins": ["prettier"]
-    // other configurations...
-  }
-  

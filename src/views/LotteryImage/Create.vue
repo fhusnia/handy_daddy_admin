@@ -116,139 +116,139 @@
 </template>
 
 <script>
-import { showCancelAlert, showSaveAlert } from "@/utils/sweetalert";
-import { mapActions } from "vuex";
-import Swal from "sweetalert2";
-import { v4 as uuidv4 } from "uuid";
-export default {
-  name: "LotteryCreateImage",
-  data() {
-    return {
-      id: null,
-      imageUrl1: "",
-      imageUrl2: "",
-      imageUrl3: "",
-      imageUrl4: "",
-      imageUrl5: "",
-      lotteryImgID: null,
-      errors: {
-        imageUrl1: false,
-        imageUrl2: false,
-        imageUrl3: false,
-        imageUrl4: false,
-        imageUrl5: false,
-      },
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.lotteryImgID = this.$route.params.id;
-      this.loadLottery(this.lotteryImgID);
-    }
-  },
-
-  methods: {
-    ...mapActions("lotteryimages", [
-      "createLotteryImage",
-      "updateLotteryImage",
-      "getLotteryImageId",
-    ]),
-
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        imageUrl1: !this.imageUrl1,
-        imageUrl2: !this.imageUrl2,
-        imageUrl3: !this.imageUrl3,
-        imageUrl4: !this.imageUrl4,
-        imageUrl5: !this.imageUrl5,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  import { showCancelAlert, showSaveAlert } from '@/utils/sweetalert'
+  import { mapActions } from 'vuex'
+  import Swal from 'sweetalert2'
+  import { v4 as uuidv4 } from 'uuid'
+  export default {
+    name: 'LotteryCreateImage',
+    data() {
+      return {
+        id: null,
+        imageUrl1: '',
+        imageUrl2: '',
+        imageUrl3: '',
+        imageUrl4: '',
+        imageUrl5: '',
+        lotteryImgID: null,
+        errors: {
+          imageUrl1: false,
+          imageUrl2: false,
+          imageUrl3: false,
+          imageUrl4: false,
+          imageUrl5: false,
+        },
       }
-      return valid;
+    },
+    created() {
+      if (this.$route.params.id) {
+        this.lotteryImgID = this.$route.params.id
+        this.loadLottery(this.lotteryImgID)
+      }
     },
 
-    clearError(field) {
-      this.errors[field] = false;
-    },
+    methods: {
+      ...mapActions('lotteryimages', [
+        'createLotteryImage',
+        'updateLotteryImage',
+        'getLotteryImageId',
+      ]),
 
-    async loadLottery(id) {
-      try {
-        await this.$store.dispatch("lotteryimages/getLotteryImageId", id);
-        const lotteryimage =
-          this.$store.getters["lotteryimages/getlotteryImage"](id);
-        const savedData = JSON.parse(localStorage.getItem("getLotteryimg"));
-        if (lotteryimage) {
-          this.imageUrl1 = lotteryimage.imageUrl1 || "";
-          this.imageUrl2 = lotteryimage.imageUrl2 || "";
-          this.imageUrl3 = lotteryimage.imageUrl3 || "";
-          this.imageUrl4 = lotteryimage.imageUrl4 || "";
-          this.imageUrl5 = lotteryimage.imageUrl5 || "";
-        } else if (savedData) {
-          this.imageUrl1 = savedData.imageUrl1 || "";
-          this.imageUrl2 = savedData.imageUrl2 || "";
-          this.imageUrl3 = savedData.imageUrl3 || "";
-          this.imageUrl4 = savedData.imageUrl4 || "";
-          this.imageUrl5 = savedData.imageUrl5 || "";
+      validateForm() {
+        let valid = true
+        this.errors = {
+          imageUrl1: !this.imageUrl1,
+          imageUrl2: !this.imageUrl2,
+          imageUrl3: !this.imageUrl3,
+          imageUrl4: !this.imageUrl4,
+          imageUrl5: !this.imageUrl5,
         }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    },
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
 
-    async cancel() {
-      const result = await showCancelAlert(this.$router);
-      if (result.isConfirmed) {
-        setTimeout(() => {
-          this.$router.push("/lotteryimage");
-        }, 500);
-      } else if (result.dismiss === "cancel") {
-        console.log("cancel");
-      }
-    },
+      clearError(field) {
+        this.errors[field] = false
+      },
 
-    async save() {
-      const result = await showSaveAlert();
-      if (result.isConfirmed) {
-        if (this.validateForm()) {
-          const lotteryImgData = {
-            id: this.id || uuidv4(),
-            imageUrl1: this.imageUrl1,
-            imageUrl2: this.imageUrl2,
-            imageUrl3: this.imageUrl3,
-            imageUrl4: this.imageUrl4,
-            imageUrl5: this.imageUrl5,
-          };
-          try {
-            if (this.lotteryImgID) {
-              this.updateLotteryImage({
-                id: this.lotteryImgID,
-                lotteryimage: lotteryImgData,
-              });
-            } else {
-              this.createLotteryImage(lotteryImgData);
+      async loadLottery(id) {
+        try {
+          await this.$store.dispatch('lotteryimages/getLotteryImageId', id)
+          const lotteryimage =
+            this.$store.getters['lotteryimages/getlotteryImage'](id)
+          const savedData = JSON.parse(localStorage.getItem('getLotteryimg'))
+          if (lotteryimage) {
+            this.imageUrl1 = lotteryimage.imageUrl1 || ''
+            this.imageUrl2 = lotteryimage.imageUrl2 || ''
+            this.imageUrl3 = lotteryimage.imageUrl3 || ''
+            this.imageUrl4 = lotteryimage.imageUrl4 || ''
+            this.imageUrl5 = lotteryimage.imageUrl5 || ''
+          } else if (savedData) {
+            this.imageUrl1 = savedData.imageUrl1 || ''
+            this.imageUrl2 = savedData.imageUrl2 || ''
+            this.imageUrl3 = savedData.imageUrl3 || ''
+            this.imageUrl4 = savedData.imageUrl4 || ''
+            this.imageUrl5 = savedData.imageUrl5 || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
+
+      async cancel() {
+        const result = await showCancelAlert(this.$router)
+        if (result.isConfirmed) {
+          setTimeout(() => {
+            this.$router.push('/lotteryimage')
+          }, 500)
+        } else if (result.dismiss === 'cancel') {
+          console.log('cancel')
+        }
+      },
+
+      async save() {
+        const result = await showSaveAlert()
+        if (result.isConfirmed) {
+          if (this.validateForm()) {
+            const lotteryImgData = {
+              id: this.id || uuidv4(),
+              imageUrl1: this.imageUrl1,
+              imageUrl2: this.imageUrl2,
+              imageUrl3: this.imageUrl3,
+              imageUrl4: this.imageUrl4,
+              imageUrl5: this.imageUrl5,
             }
+            try {
+              if (this.lotteryImgID) {
+                this.updateLotteryImage({
+                  id: this.lotteryImgID,
+                  lotteryimage: lotteryImgData,
+                })
+              } else {
+                this.createLotteryImage(lotteryImgData)
+              }
 
-            Swal.fire({
-              title: "Saved!",
-              text: "Your changes have been saved.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+              Swal.fire({
+                title: 'Saved!',
+                text: 'Your changes have been saved.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+              })
 
-            setTimeout(() => {
-              this.$router.push("/lotteryimage");
-            }, 1500);
-          } catch (error) {
-            console.log(error);
+              setTimeout(() => {
+                this.$router.push('/lotteryimage')
+              }, 1500)
+            } catch (error) {
+              console.log(error)
+            }
           }
         }
-      }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style></style>

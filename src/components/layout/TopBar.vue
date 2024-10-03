@@ -22,26 +22,26 @@
 </template>
 
 <script>
-import { eventBus } from "@/eventBus";
-export default {
-  name: "TopBar",
-  data() {
-    return {
-      headerText: "",
-    };
-  },
-  methods: {
-    logout() {
-      sessionStorage.removeItem("authToken");
-      this.$router.push({ name: "login" });
+  import { eventBus } from '@/eventBus'
+  export default {
+    name: 'TopBar',
+    data() {
+      return {
+        headerText: '',
+      }
     },
-  },
-  created() {
-    eventBus.$on("updateHeader", (newText) => {
-      this.headerText = newText;
-    });
-  },
-};
+    methods: {
+      logout() {
+        sessionStorage.removeItem('authToken')
+        this.$router.push({ name: 'login' })
+      },
+    },
+    created() {
+      eventBus.$on('updateHeader', (newText) => {
+        this.headerText = newText
+      })
+    },
+  }
 </script>
 
 <style lang="scss" scoped></style>

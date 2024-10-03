@@ -1,6 +1,6 @@
-import { appliancesMutations } from "../mutations";
-import { appliancesActions } from "../actions";
-import { applianceGetters } from "../getters";
+import { appliancesMutations } from '../mutations'
+import { appliancesActions } from '../actions'
+import { applianceGetters } from '../getters'
 
 export const Appliances = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const Appliances = {
   mutations: appliancesMutations,
   getters: applianceGetters,
   actions: appliancesActions,
-};
+}

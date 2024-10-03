@@ -58,51 +58,51 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { showDeleteAlert } from "@/utils/sweetalert";
-import Swal from "sweetalert2";
+  import { mapActions, mapGetters } from 'vuex'
+  import { showDeleteAlert } from '@/utils/sweetalert'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "lotteryImage",
-  mounted() {
-    this.getAllLotteryImage();
-  },
-  methods: {
-    ...mapActions("lotteryimages", [
-      "getAllLotteryImage",
-      "deleteLotteryImage",
-    ]),
-
-    async getAllLotteryImage() {
-      try {
-        await this.$store.dispatch("lotteryimages/getAllLotteryImage");
-      } catch (error) {
-        console.error("Error", error);
-      }
+  export default {
+    name: 'lotteryImage',
+    mounted() {
+      this.getAllLotteryImage()
     },
-    async deleteLotteryImage(id) {
-      const result = await showDeleteAlert();
-      if (result.isConfirmed) {
+    methods: {
+      ...mapActions('lotteryimages', [
+        'getAllLotteryImage',
+        'deleteLotteryImage',
+      ]),
+
+      async getAllLotteryImage() {
         try {
-          await this.$store.dispatch("lotteryimages/deleteLotteryImage", id);
-
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          await this.$store.dispatch('lotteryimages/getAllLotteryImage')
         } catch (error) {
-          console.error(error);
+          console.error('Error', error)
         }
-      }
+      },
+      async deleteLotteryImage(id) {
+        const result = await showDeleteAlert()
+        if (result.isConfirmed) {
+          try {
+            await this.$store.dispatch('lotteryimages/deleteLotteryImage', id)
+
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your item has been deleted.',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
+            })
+          } catch (error) {
+            console.error(error)
+          }
+        }
+      },
     },
-  },
-  computed: {
-    ...mapGetters("lotteryimages", ["lotteryImages"]),
-  },
-};
+    computed: {
+      ...mapGetters('lotteryimages', ['lotteryImages']),
+    },
+  }
 </script>
 
 <style></style>

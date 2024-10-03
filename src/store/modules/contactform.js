@@ -1,6 +1,6 @@
-import { ContactFormAction } from "../actions";
-import { contactformGetters } from "../getters";
-import { ContactFormMutations } from "../mutations";
+import { ContactFormAction } from '../actions'
+import { contactformGetters } from '../getters'
+import { ContactFormMutations } from '../mutations'
 
 export const ContactForm = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const ContactForm = {
   mutations: ContactFormMutations,
   getters: contactformGetters,
   actions: ContactFormAction,
-};
+}

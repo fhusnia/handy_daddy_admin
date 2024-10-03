@@ -81,19 +81,19 @@
 </template>
 
 <script>
-import { eventBus } from "@/eventBus";
-export default {
-  name: "SideBar",
-  methods: {
-    updateHeader(newText) {
-      eventBus.$emit("updateHeader", newText);
+  import { eventBus } from '@/eventBus'
+  export default {
+    name: 'SideBar',
+    methods: {
+      updateHeader(newText) {
+        eventBus.$emit('updateHeader', newText)
+      },
     },
-  },
-};
+  }
 </script>
 
 <style lang="scss" scoped>
-.router-link-active {
-  color: #fbbf24;
-}
+  .router-link-active {
+    color: #fbbf24;
+  }
 </style>

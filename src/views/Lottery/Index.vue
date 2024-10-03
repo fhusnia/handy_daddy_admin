@@ -45,48 +45,48 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { showDeleteAlert } from "@/utils/sweetalert";
-import Swal from "sweetalert2";
+  import { mapActions, mapGetters } from 'vuex'
+  import { showDeleteAlert } from '@/utils/sweetalert'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "LLottery",
-  mounted() {
-    this.getAllLottery();
-  },
-  methods: {
-    ...mapActions("lotteries", ["getAllLottery", "deleteLottery"]),
-
-    async getAllLottery() {
-      try {
-        await this.$store.dispatch("lotteries/getAllLottery");
-      } catch (error) {
-        console.error("Error", error);
-      }
+  export default {
+    name: 'LLottery',
+    mounted() {
+      this.getAllLottery()
     },
-    async deleteLottery(id) {
-      const result = await showDeleteAlert();
-      if (result.isConfirmed) {
+    methods: {
+      ...mapActions('lotteries', ['getAllLottery', 'deleteLottery']),
+
+      async getAllLottery() {
         try {
-          await this.$store.dispatch("lotteries/deleteLottery", id);
-
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          await this.$store.dispatch('lotteries/getAllLottery')
         } catch (error) {
-          console.error(error);
+          console.error('Error', error)
         }
-      }
+      },
+      async deleteLottery(id) {
+        const result = await showDeleteAlert()
+        if (result.isConfirmed) {
+          try {
+            await this.$store.dispatch('lotteries/deleteLottery', id)
+
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your item has been deleted.',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
+            })
+          } catch (error) {
+            console.error(error)
+          }
+        }
+      },
     },
-  },
-  computed: {
-    ...mapGetters("lotteries", ["lotteries"]),
-  },
-};
+    computed: {
+      ...mapGetters('lotteries', ['lotteries']),
+    },
+  }
 </script>
 
 <style></style>

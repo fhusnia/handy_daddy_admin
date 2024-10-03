@@ -43,48 +43,48 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { showDeleteAlert } from "@/utils/sweetalert";
-import Swal from "sweetalert2";
+  import { mapActions, mapGetters } from 'vuex'
+  import { showDeleteAlert } from '@/utils/sweetalert'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "PrivacyIndex",
-  mounted() {
-    this.getAllPrivacy();
-  },
-  methods: {
-    ...mapActions("privacies", ["getAllPrivacy", "deleteFaq"]),
-
-    async getAllPrivacy() {
-      try {
-        await this.$store.dispatch("privacies/getAllPrivacy");
-      } catch (error) {
-        console.error("Error", error);
-      }
+  export default {
+    name: 'PrivacyIndex',
+    mounted() {
+      this.getAllPrivacy()
     },
-    async deletePrivacy(id) {
-      const result = await showDeleteAlert();
-      if (result.isConfirmed) {
+    methods: {
+      ...mapActions('privacies', ['getAllPrivacy', 'deleteFaq']),
+
+      async getAllPrivacy() {
         try {
-          await this.$store.dispatch("privacies/deletePrivacy", id);
-
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          await this.$store.dispatch('privacies/getAllPrivacy')
         } catch (error) {
-          console.error(error);
+          console.error('Error', error)
         }
-      }
+      },
+      async deletePrivacy(id) {
+        const result = await showDeleteAlert()
+        if (result.isConfirmed) {
+          try {
+            await this.$store.dispatch('privacies/deletePrivacy', id)
+
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your item has been deleted.',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
+            })
+          } catch (error) {
+            console.error(error)
+          }
+        }
+      },
     },
-  },
-  computed: {
-    ...mapGetters("privacies", ["privacies"]),
-  },
-};
+    computed: {
+      ...mapGetters('privacies', ['privacies']),
+    },
+  }
 </script>
 
 <style></style>

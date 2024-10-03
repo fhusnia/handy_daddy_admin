@@ -44,49 +44,49 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { showDeleteAlert } from "@/utils/sweetalert";
-import Swal from "sweetalert2";
+  import { mapActions, mapGetters } from 'vuex'
+  import { showDeleteAlert } from '@/utils/sweetalert'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "ContactForm",
-  mounted() {
-    this.getAllContactform();
-  },
-  methods: {
-    ...mapActions("contactforms", ["getAllContactform", "deleteContactform"]),
-
-    async getAllContactform() {
-      try {
-        await this.$store.dispatch("contactforms/getAllContactform");
-      } catch (error) {
-        console.error("Error", error);
-      }
+  export default {
+    name: 'ContactForm',
+    mounted() {
+      this.getAllContactform()
     },
-    async deleteContactform(id) {
-      const result = await showDeleteAlert();
-      if (result.isConfirmed) {
+    methods: {
+      ...mapActions('contactforms', ['getAllContactform', 'deleteContactform']),
+
+      async getAllContactform() {
         try {
-          console.log("dlt");
-          await this.$store.dispatch("contactforms/deleteContactform", id);
-
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          await this.$store.dispatch('contactforms/getAllContactform')
         } catch (error) {
-          console.error(error);
+          console.error('Error', error)
         }
-      }
+      },
+      async deleteContactform(id) {
+        const result = await showDeleteAlert()
+        if (result.isConfirmed) {
+          try {
+            console.log('dlt')
+            await this.$store.dispatch('contactforms/deleteContactform', id)
+
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your item has been deleted.',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
+            })
+          } catch (error) {
+            console.error(error)
+          }
+        }
+      },
     },
-  },
-  computed: {
-    ...mapGetters("contactforms", ["contactforms"]),
-  },
-};
+    computed: {
+      ...mapGetters('contactforms', ['contactforms']),
+    },
+  }
 </script>
 
 <style></style>

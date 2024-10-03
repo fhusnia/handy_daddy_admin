@@ -36,54 +36,54 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-export default {
-  name: "OXu",
-  data() {
-    return {
-      fullName: "",
-      phone: "",
-      servicetype: "",
-      message: "",
-      email: "",
-      JoinID: null,
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.JoinID = this.$route.params.id;
-      this.loadContactForm(this.JoinID);
-    }
-  },
-
-  methods: {
-    async loadContactForm(id) {
-      try {
-        await this.$store.dispatch("joins/getJoinId", id);
-        const joinform = this.$store.getters["joins/getJoin"](id);
-        const savedData = JSON.parse(localStorage.getItem("getJoin"));
-        if (joinform) {
-          this.fullName = joinform.fullName || "";
-          this.phone = joinform.phone || "";
-          this.servicetype = joinform.servicetype || "";
-          this.message = joinform.message || "";
-          this.email = joinform.email || "";
-        } else if (savedData) {
-          this.fullName = savedData.fullName || "";
-          this.phone = savedData.phone || "";
-          this.email = savedData.email || "";
-          this.servicetype = savedData.servicetype || "";
-          this.message = savedData.message || "";
-        }
-      } catch (error) {
-        console.error("Error ", error);
+  import { mapGetters } from 'vuex'
+  export default {
+    name: 'OXu',
+    data() {
+      return {
+        fullName: '',
+        phone: '',
+        servicetype: '',
+        message: '',
+        email: '',
+        JoinID: null,
       }
     },
-  },
-  computed: {
-    ...mapGetters("joins", ["getJoin"]),
-  },
-};
+    created() {
+      if (this.$route.params.id) {
+        this.JoinID = this.$route.params.id
+        this.loadContactForm(this.JoinID)
+      }
+    },
+
+    methods: {
+      async loadContactForm(id) {
+        try {
+          await this.$store.dispatch('joins/getJoinId', id)
+          const joinform = this.$store.getters['joins/getJoin'](id)
+          const savedData = JSON.parse(localStorage.getItem('getJoin'))
+          if (joinform) {
+            this.fullName = joinform.fullName || ''
+            this.phone = joinform.phone || ''
+            this.servicetype = joinform.servicetype || ''
+            this.message = joinform.message || ''
+            this.email = joinform.email || ''
+          } else if (savedData) {
+            this.fullName = savedData.fullName || ''
+            this.phone = savedData.phone || ''
+            this.email = savedData.email || ''
+            this.servicetype = savedData.servicetype || ''
+            this.message = savedData.message || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
+    },
+    computed: {
+      ...mapGetters('joins', ['getJoin']),
+    },
+  }
 </script>
 
 <style></style>

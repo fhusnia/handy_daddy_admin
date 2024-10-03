@@ -1,6 +1,6 @@
-import { AuthService } from "../actions";
-import { Logingetters } from "../getters";
-import { Loginmutations } from "../mutations";
+import { AuthService } from '../actions'
+import { Logingetters } from '../getters'
+import { Loginmutations } from '../mutations'
 
 export const Login = {
   namespaced: true,
@@ -13,4 +13,4 @@ export const Login = {
   mutations: Loginmutations,
   getters: Logingetters,
   actions: AuthService,
-};
+}

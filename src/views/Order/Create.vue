@@ -48,60 +48,60 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-export default {
-  name: "OrderRead",
-  data() {
-    return {
-      fullName: "",
-      phone: "",
-      applianceType: "",
-      email: "",
-      address: "",
-      date: "",
-      hour: "",
-      orderId: null,
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.orderId = this.$route.params.id;
-      this.loadOrder(this.orderId);
-    }
-  },
-
-  methods: {
-    async loadOrder(id) {
-      try {
-        await this.$store.dispatch("orders/getOrderId", id);
-        const order = this.$store.getters["orders/getorder"](id);
-        const savedData = JSON.parse(localStorage.getItem("getOrder"));
-        if (order) {
-          this.fullName = order.fullName || "";
-          this.phone = order.phone || "";
-          this.applianceType = order.applianceType || "";
-          this.date = order.date || "";
-          this.hour = order.email || "";
-          this.address = order.email || "";
-          this.email = order.email || "";
-        } else if (savedData) {
-          this.fullName = savedData.fullName || "";
-          this.phone = savedData.phone || "";
-          this.applianceType = savedData.applianceType || "";
-          this.date = savedData.date || "";
-          this.hour = savedData.email || "";
-          this.address = savedData.email || "";
-          this.email = savedData.email || "";
-        }
-      } catch (error) {
-        console.error("Error ", error);
+  import { mapGetters } from 'vuex'
+  export default {
+    name: 'OrderRead',
+    data() {
+      return {
+        fullName: '',
+        phone: '',
+        applianceType: '',
+        email: '',
+        address: '',
+        date: '',
+        hour: '',
+        orderId: null,
       }
     },
-  },
-  computed: {
-    ...mapGetters("getorder", ["getorder"]),
-  },
-};
+    created() {
+      if (this.$route.params.id) {
+        this.orderId = this.$route.params.id
+        this.loadOrder(this.orderId)
+      }
+    },
+
+    methods: {
+      async loadOrder(id) {
+        try {
+          await this.$store.dispatch('orders/getOrderId', id)
+          const order = this.$store.getters['orders/getorder'](id)
+          const savedData = JSON.parse(localStorage.getItem('getOrder'))
+          if (order) {
+            this.fullName = order.fullName || ''
+            this.phone = order.phone || ''
+            this.applianceType = order.applianceType || ''
+            this.date = order.date || ''
+            this.hour = order.email || ''
+            this.address = order.email || ''
+            this.email = order.email || ''
+          } else if (savedData) {
+            this.fullName = savedData.fullName || ''
+            this.phone = savedData.phone || ''
+            this.applianceType = savedData.applianceType || ''
+            this.date = savedData.date || ''
+            this.hour = savedData.email || ''
+            this.address = savedData.email || ''
+            this.email = savedData.email || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
+    },
+    computed: {
+      ...mapGetters('getorder', ['getorder']),
+    },
+  }
 </script>
 
 <style></style>

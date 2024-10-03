@@ -1,23 +1,23 @@
-import axios from "axios";
+import axios from 'axios'
 
-const API_URL = "http://localhost:3000/blogs";
+const API_URL = 'http://localhost:3000/blogs'
 
 export const getAllBlog = () => {
-  return axios.get(API_URL);
-};
+  return axios.get(API_URL)
+}
 
 export const getBlogId = (id) => {
-  return axios.get(`${API_URL}/${id}`);
-};
+  return axios.get(`${API_URL}/${id}`)
+}
 
 export const createBlog = (blog) => {
-  return axios.post(API_URL, blog);
-};
+  return axios.post(API_URL, blog)
+}
 
 export const updateBlog = (id, blog) => {
-  return axios.put(`${API_URL}/${id}`, blog);
-};
+  return axios.put(`${API_URL}/${id}`, blog)
+}
 
 export const deleteBlog = (id) => {
-  return axios.delete(`${API_URL}/${id}`);
-};
+  return axios.delete(`${API_URL}/${id}`)
+}

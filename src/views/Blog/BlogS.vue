@@ -44,48 +44,48 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { showDeleteAlert } from "@/utils/sweetalert";
-import Swal from "sweetalert2";
+  import { mapActions, mapGetters } from 'vuex'
+  import { showDeleteAlert } from '@/utils/sweetalert'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "BlogS",
-  mounted() {
-    this.fetchBlog();
-  },
-  methods: {
-    ...mapActions("blogs", ["fetchBlog", "deleteBlog"]),
-
-    async fetchBlog() {
-      try {
-        await this.$store.dispatch("blogs/fetchBlog");
-      } catch (error) {
-        console.error("Error", error);
-      }
+  export default {
+    name: 'BlogS',
+    mounted() {
+      this.fetchBlog()
     },
-    async deleteBlog(id) {
-      const result = await showDeleteAlert();
-      if (result.isConfirmed) {
+    methods: {
+      ...mapActions('blogs', ['fetchBlog', 'deleteBlog']),
+
+      async fetchBlog() {
         try {
-          await this.$store.dispatch("blogs/deleteBlog", id);
-
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          await this.$store.dispatch('blogs/fetchBlog')
         } catch (error) {
-          console.error(error);
+          console.error('Error', error)
         }
-      }
+      },
+      async deleteBlog(id) {
+        const result = await showDeleteAlert()
+        if (result.isConfirmed) {
+          try {
+            await this.$store.dispatch('blogs/deleteBlog', id)
+
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your item has been deleted.',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
+            })
+          } catch (error) {
+            console.error(error)
+          }
+        }
+      },
     },
-  },
-  computed: {
-    ...mapGetters("blogs", ["blogs"]),
-  },
-};
+    computed: {
+      ...mapGetters('blogs', ['blogs']),
+    },
+  }
 </script>
 
 <style></style>

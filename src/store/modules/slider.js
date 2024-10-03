@@ -1,6 +1,6 @@
-import { SliderImageAction } from "../actions";
-import { SliderImageGetters } from "../getters";
-import { SliderImageMutations } from "../mutations";
+import { SliderImageAction } from '../actions'
+import { SliderImageGetters } from '../getters'
+import { SliderImageMutations } from '../mutations'
 
 export const SliderImage = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const SliderImage = {
   mutations: SliderImageMutations,
   getters: SliderImageGetters,
   actions: SliderImageAction,
-};
+}

@@ -102,124 +102,124 @@
 </template>
 
 <script>
-import { showCancelAlert, showSaveAlert } from "@/utils/sweetalert";
-import { mapActions } from "vuex";
-import Swal from "sweetalert2";
-import { v4 as uuidv4 } from "uuid";
+  import { showCancelAlert, showSaveAlert } from '@/utils/sweetalert'
+  import { mapActions } from 'vuex'
+  import Swal from 'sweetalert2'
+  import { v4 as uuidv4 } from 'uuid'
 
-export default {
-  name: "ReviewCreate",
-  data() {
-    return {
-      id: null,
-      fullName: "",
-      point: null,
-      comment: "",
-      service: "",
-      errors: {
-        fullName: false,
-        point: false,
-        comment: false,
-        service: false,
-      },
-    };
-  },
-  created() {
-    if (this.$route.params.id) {
-      this.reviewID = this.$route.params.id;
-      this.loadReview(this.reviewID);
-    }
-  },
-
-  methods: {
-    ...mapActions("reviews", ["createReview", "updateReview", "getReviewId"]),
-
-    validateForm() {
-      let valid = true;
-      this.errors = {
-        fullName: !this.fullName,
-        point: !this.point,
-        comment: !this.comment,
-        service: !this.service,
-      };
-      for (const key in this.errors) {
-        if (this.errors[key]) valid = false;
+  export default {
+    name: 'ReviewCreate',
+    data() {
+      return {
+        id: null,
+        fullName: '',
+        point: null,
+        comment: '',
+        service: '',
+        errors: {
+          fullName: false,
+          point: false,
+          comment: false,
+          service: false,
+        },
       }
-      return valid;
+    },
+    created() {
+      if (this.$route.params.id) {
+        this.reviewID = this.$route.params.id
+        this.loadReview(this.reviewID)
+      }
     },
 
-    clearError(field) {
-      this.errors[field] = false;
-    },
-    async loadReview(id) {
-      try {
-        await this.$store.dispatch("reviews/getReviewId", id);
-        const review = this.$store.getters["reviews/getreview"](id);
-        const savedData = JSON.parse(localStorage.getItem("getReview"));
-        if (review) {
-          this.fullName = review.fullName || "";
-          this.point = review.point || "";
-          this.comment = review.comment || "";
-          this.service = review.service || "";
-        } else if (savedData) {
-          this.fullName = savedData.fullName || "";
-          this.point = savedData.point || "";
-          this.comment = savedData.comment || "";
-          this.service = savedData.service || "";
+    methods: {
+      ...mapActions('reviews', ['createReview', 'updateReview', 'getReviewId']),
+
+      validateForm() {
+        let valid = true
+        this.errors = {
+          fullName: !this.fullName,
+          point: !this.point,
+          comment: !this.comment,
+          service: !this.service,
         }
-      } catch (error) {
-        console.error("Error ", error);
-      }
-    },
-    async cancel() {
-      const result = await showCancelAlert(this.$router);
-      if (result.isConfirmed) {
-        setTimeout(() => {
-          this.$router.push("/review");
-        }, 500);
-      } else if (result.dismiss === "cancel") {
-        console.log("cancel");
-      }
-    },
-    async save() {
-      const result = await showSaveAlert();
+        for (const key in this.errors) {
+          if (this.errors[key]) valid = false
+        }
+        return valid
+      },
 
-      if (result.isConfirmed) {
-        if (this.validateForm()) {
-          const reviewData = {
-            id: this.id || uuidv4(),
-            fullName: this.fullName,
-            point: this.point,
-            comment: this.comment,
-            service: this.service,
-          };
+      clearError(field) {
+        this.errors[field] = false
+      },
+      async loadReview(id) {
+        try {
+          await this.$store.dispatch('reviews/getReviewId', id)
+          const review = this.$store.getters['reviews/getreview'](id)
+          const savedData = JSON.parse(localStorage.getItem('getReview'))
+          if (review) {
+            this.fullName = review.fullName || ''
+            this.point = review.point || ''
+            this.comment = review.comment || ''
+            this.service = review.service || ''
+          } else if (savedData) {
+            this.fullName = savedData.fullName || ''
+            this.point = savedData.point || ''
+            this.comment = savedData.comment || ''
+            this.service = savedData.service || ''
+          }
+        } catch (error) {
+          console.error('Error ', error)
+        }
+      },
+      async cancel() {
+        const result = await showCancelAlert(this.$router)
+        if (result.isConfirmed) {
+          setTimeout(() => {
+            this.$router.push('/review')
+          }, 500)
+        } else if (result.dismiss === 'cancel') {
+          console.log('cancel')
+        }
+      },
+      async save() {
+        const result = await showSaveAlert()
 
-          try {
-            if (this.reviewID) {
-              this.updateReview({ id: this.reviewID, review: reviewData });
-            } else {
-              this.createReview(reviewData);
+        if (result.isConfirmed) {
+          if (this.validateForm()) {
+            const reviewData = {
+              id: this.id || uuidv4(),
+              fullName: this.fullName,
+              point: this.point,
+              comment: this.comment,
+              service: this.service,
             }
 
-            Swal.fire({
-              title: "Saved!",
-              text: "Your changes have been saved.",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 1500,
-            });
+            try {
+              if (this.reviewID) {
+                this.updateReview({ id: this.reviewID, review: reviewData })
+              } else {
+                this.createReview(reviewData)
+              }
 
-            setTimeout(() => {
-              this.$router.push("/review");
-            }, 1500);
-          } catch (error) {
-            console.log(error);
+              Swal.fire({
+                title: 'Saved!',
+                text: 'Your changes have been saved.',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1500,
+              })
+
+              setTimeout(() => {
+                this.$router.push('/review')
+              }, 1500)
+            } catch (error) {
+              console.log(error)
+            }
           }
         }
-      }
+      },
     },
-  },
-};
+  }
 </script>
 
 <style></style>

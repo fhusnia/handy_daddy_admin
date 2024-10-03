@@ -7,9 +7,9 @@
 </template>
 
 <script>
-export default {
-  name: "LeftComponent",
-};
+  export default {
+    name: 'LeftComponent',
+  }
 </script>
 
 <style></style>

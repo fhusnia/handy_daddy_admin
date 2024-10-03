@@ -1,23 +1,23 @@
-import axios from "axios";
+import axios from 'axios'
 
-const API_URL = "http://localhost:3000/appliances";
+const API_URL = 'http://localhost:3000/appliances'
 
 export const getAllAppliances = () => {
-  return axios.get(API_URL);
-};
+  return axios.get(API_URL)
+}
 
 export const getApplianceById = (id) => {
-  return axios.get(`${API_URL}/${id}`);
-};
+  return axios.get(`${API_URL}/${id}`)
+}
 
 export const createAppliance = (appliance) => {
-  return axios.post(API_URL, appliance);
-};
+  return axios.post(API_URL, appliance)
+}
 
 export const updateAppliance = (id, appliance) => {
-  return axios.put(`${API_URL}/${id}`, appliance);
-};
+  return axios.put(`${API_URL}/${id}`, appliance)
+}
 
 export const deleteAppliance = (id) => {
-  return axios.delete(`${API_URL}/${id}`);
-};
+  return axios.delete(`${API_URL}/${id}`)
+}

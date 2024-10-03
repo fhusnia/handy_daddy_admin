@@ -49,50 +49,50 @@
   </div>
 </template>
 <script>
-import { mapActions, mapGetters } from "vuex";
-import { showDeleteAlert } from "@/utils/sweetalert";
-import Swal from "sweetalert2";
+  import { mapActions, mapGetters } from 'vuex'
+  import { showDeleteAlert } from '@/utils/sweetalert'
+  import Swal from 'sweetalert2'
 
-export default {
-  name: "ApplianCesView",
+  export default {
+    name: 'ApplianCesView',
 
-  mounted() {
-    this.fetchAppliances();
-  },
-  methods: {
-    ...mapActions("appliances", ["fetchAppliances", "deleteAppliance"]),
-    //GET
-    async fetchAppliances() {
-      try {
-        await this.$store.dispatch("appliances/fetchAppliances");
-      } catch (error) {
-        console.error("Error", error);
-      }
+    mounted() {
+      this.fetchAppliances()
     },
-    //DELETE
-    async deleteAppliance(id) {
-      const result = await showDeleteAlert();
-
-      if (result.isConfirmed) {
+    methods: {
+      ...mapActions('appliances', ['fetchAppliances', 'deleteAppliance']),
+      //GET
+      async fetchAppliances() {
         try {
-          await this.$store.dispatch("appliances/deleteAppliance", id);
-
-          Swal.fire({
-            title: "Deleted!",
-            text: "Your item has been deleted.",
-            icon: "success",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          await this.$store.dispatch('appliances/fetchAppliances')
         } catch (error) {
-          console.error("Error", error);
+          console.error('Error', error)
         }
-      }
+      },
+      //DELETE
+      async deleteAppliance(id) {
+        const result = await showDeleteAlert()
+
+        if (result.isConfirmed) {
+          try {
+            await this.$store.dispatch('appliances/deleteAppliance', id)
+
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your item has been deleted.',
+              icon: 'success',
+              showConfirmButton: false,
+              timer: 1500,
+            })
+          } catch (error) {
+            console.error('Error', error)
+          }
+        }
+      },
     },
-  },
-  computed: {
-    ...mapGetters("appliances", ["appliances"]),
-  },
-};
+    computed: {
+      ...mapGetters('appliances', ['appliances']),
+    },
+  }
 </script>
 <style></style>

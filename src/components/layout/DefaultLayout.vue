@@ -17,21 +17,21 @@
 </template>
 
 <script>
-import SideBar from "./SideBar.vue";
-import TopBar from "./TopBar.vue";
+  import SideBar from './SideBar.vue'
+  import TopBar from './TopBar.vue'
 
-export default {
-  name: "DefaultLayout",
-  components: {
-    SideBar,
-    TopBar,
-  },
-  computed: {
-    isLoginPath() {
-      return this.$route.path === "/";
+  export default {
+    name: 'DefaultLayout',
+    components: {
+      SideBar,
+      TopBar,
     },
-  },
-};
+    computed: {
+      isLoginPath() {
+        return this.$route.path === '/'
+      },
+    },
+  }
 </script>
 
 <style></style>

@@ -1,6 +1,6 @@
-import { ORDERAction } from "../actions";
-import { orderGetters } from "../getters";
-import { OrderMutations } from "../mutations";
+import { ORDERAction } from '../actions'
+import { orderGetters } from '../getters'
+import { OrderMutations } from '../mutations'
 
 export const Order = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const Order = {
   mutations: OrderMutations,
   getters: orderGetters,
   actions: ORDERAction,
-};
+}

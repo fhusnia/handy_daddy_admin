@@ -1,6 +1,6 @@
-import { ContactAction } from "../actions";
-import { contactGetters } from "../getters";
-import { ContactMutations } from "../mutations";
+import { ContactAction } from '../actions'
+import { contactGetters } from '../getters'
+import { ContactMutations } from '../mutations'
 
 export const Contact = {
   namespaced: true,
@@ -10,4 +10,4 @@ export const Contact = {
   mutations: ContactMutations,
   getters: contactGetters,
   actions: ContactAction,
-};
+}
