@@ -1,16 +1,17 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs'); 
+const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/api/data', (req, res) => {
   fs.readFile(path.join(__dirname, 'db.json'), 'utf8', (err, data) => {
     if (err) {
-      return res.status(500).send('Error reading the database');
+      return res.status(500).send('Veritabanı okunurken hata oluştu');
     }
     res.send(JSON.parse(data));
   });
