@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'https://powerful-plains-07667-03abf6521974.herokuapp.com/api/data'
+const API_URL = 'http://localhost:3000/contacts'
 
 export const getAllBlog = () => {
   return axios.get(API_URL)
