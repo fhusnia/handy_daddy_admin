@@ -8,7 +8,8 @@
     "format": "prettier --write \"src/**/*.{js,vue,scss,html}\"",
     "serve": "node server.js",
     "json-server": "json-server --watch db.json --port 5000",
-    "start": "concurrently \"npm run serve\" \"npm run json-server\""
+    "start": "concurrently \"npm run serve\" \"npm run json-server\"",
+    "heroku-postbuild": "npm install && npm run build" 
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^43.0.0",
