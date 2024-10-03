@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/contacts'
+const API_URL = 'http://localhost:3000/blogs'
 
 export const getAllBlog = () => {
   return axios.get(API_URL)
