@@ -1,10 +1,15 @@
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('db.json'); // Change to your actual data file
-const middlewares = jsonServer.defaults();
+const express = require('express');
+const path = require('path');
 
-server.use(middlewares);
-server.use(router);
-server.listen(3000, () => {
-    console.log('JSON Server is running');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
