@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'https://localhost:3000/lotteryimages'
+const API_URL = 'http://localhost:3000/lotteryimages'
 
 export const getAllLotteryImage = () => {
   return axios.get(API_URL)

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'https://localhost:3000/privacies'
+const API_URL = 'http://localhost:3000/privacies'
 
 export const getAllPrivacy = () => {
   return axios.get(API_URL)
