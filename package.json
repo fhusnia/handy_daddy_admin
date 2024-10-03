@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "format": "prettier --write \"src/**/*.{js,vue,scss,html}\"",
-    "start": "concurrently \"npm run serve\" \"npm run json-server\"",
-    "json-server": "json-server --watch db.json --port 5000"
+    "serve": "node server.js",
+    "json-server": "json-server --watch db.json --port 5000",
+    "start": "concurrently \"npm run serve\" \"npm run json-server\""
   },
+  
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^43.0.0",
     "@ckeditor/ckeditor5-vue2": "^3.0.1",
@@ -18,7 +19,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^2.0.10",
     "axios": "^1.7.7",
-    "concurrently": "^9.0.1",
     "express": "^4.21.0",
     "json-server": "^1.0.0-beta.3",
     "uuid": "^10.0.0",

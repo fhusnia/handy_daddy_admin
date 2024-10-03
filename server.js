@@ -5,7 +5,6 @@ const fs = require('fs');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/api/data', (req, res) => {
