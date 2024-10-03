@@ -16,6 +16,16 @@ app.get('/api/data', (req, res) => {
   });
 });
 
+app.get('/api/appliances', (req, res) => {
+    fs.readFile(path.join(__dirname, 'db.json'), 'utf8', (err, data) => {
+      if (err) {
+        return res.status(500).send('error');
+      }
+      res.send(JSON.parse(data).appliances);
+    });
+});
+
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
