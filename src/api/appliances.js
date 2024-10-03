@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3000/appliances'
+const API_URL = 'https://powerful-plains-07667-03abf6521974.herokuapp.com/api/data'
 
 export const getAllAppliances = () => {
   return axios.get(API_URL)

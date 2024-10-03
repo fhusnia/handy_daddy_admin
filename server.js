@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.get('/api/data', (req, res) => {
   fs.readFile(path.join(__dirname, 'db.json'), 'utf8', (err, data) => {
     if (err) {
-      return res.status(500).send('Veritabanı okunurken hata oluştu');
+      return res.status(500).send('error');
     }
     res.send(JSON.parse(data));
   });
